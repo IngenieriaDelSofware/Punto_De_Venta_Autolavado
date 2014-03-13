@@ -23,7 +23,8 @@ namespace PV_Autolavado
 		
 		void BtnAgregarServicioClick(object sender, EventArgs e)
 		{
-			dgvVentas.Rows.Add();
+			dgvVentas.Rows.Add(n, "Servicio 1", "$ 10.00", "$ 1.60", "$ 11.60");
+			n++;
 		}
 		
 		void BtnTotalClick(object sender, EventArgs e)
@@ -35,6 +36,6 @@ namespace PV_Autolavado
 		{
 			MessageBox.Show("Aqui va un menu de Opciones \n En caso de existir");
 		}
-		
+
 	}
 }

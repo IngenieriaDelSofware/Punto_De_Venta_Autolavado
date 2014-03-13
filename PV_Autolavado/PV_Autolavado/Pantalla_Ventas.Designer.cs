@@ -1,12 +1,4 @@
-﻿/*
- * Created by SharpDevelop.
- * User: sdarkland
- * Date: 12/03/2014
- * Time: 11:54 p.m.
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
- */
-namespace PV_Autolavado
+﻿namespace PV_Autolavado
 {
 	partial class Pantalla_Ventas
 	{
@@ -47,17 +39,18 @@ namespace PV_Autolavado
 			this.btnOpciones = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.pboxLogo = new System.Windows.Forms.PictureBox();
 			this.dgvVentas = new System.Windows.Forms.DataGridView();
 			this.numero_servicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.IVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.pboxLogo = new System.Windows.Forms.PictureBox();
+			this.priceTextBox1 = new PV_Autolavado.PriceTextBox();
 			this.groupBox1.SuspendLayout();
 			this.panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pboxLogo)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pboxLogo)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// txtTotal
@@ -178,16 +171,6 @@ namespace PV_Autolavado
 			this.panel1.Size = new System.Drawing.Size(860, 421);
 			this.panel1.TabIndex = 14;
 			// 
-			// pboxLogo
-			// 
-			this.pboxLogo.BackColor = System.Drawing.SystemColors.ActiveCaption;
-			this.pboxLogo.InitialImage = null;
-			this.pboxLogo.Location = new System.Drawing.Point(12, 497);
-			this.pboxLogo.Name = "pboxLogo";
-			this.pboxLogo.Size = new System.Drawing.Size(514, 246);
-			this.pboxLogo.TabIndex = 15;
-			this.pboxLogo.TabStop = false;
-			// 
 			// dgvVentas
 			// 
 			this.dgvVentas.AllowUserToDeleteRows = false;
@@ -237,11 +220,32 @@ namespace PV_Autolavado
 			this.Total.Name = "Total";
 			this.Total.ReadOnly = true;
 			// 
+			// pboxLogo
+			// 
+			this.pboxLogo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.pboxLogo.InitialImage = null;
+			this.pboxLogo.Location = new System.Drawing.Point(12, 497);
+			this.pboxLogo.Name = "pboxLogo";
+			this.pboxLogo.Size = new System.Drawing.Size(514, 237);
+			this.pboxLogo.TabIndex = 15;
+			this.pboxLogo.TabStop = false;
+			// 
+			// priceTextBox1
+			// 
+			this.priceTextBox1.Cantidad = 10.00D;
+			this.priceTextBox1.Location = new System.Drawing.Point(378, 15);
+			this.priceTextBox1.Name = "priceTextBox1";
+			this.priceTextBox1.Size = new System.Drawing.Size(100, 20);
+			this.priceTextBox1.TabIndex = 16;
+			this.priceTextBox1.Text = "$0.00";
+			this.priceTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			// 
 			// Pantalla_Ventas
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(884, 755);
+			this.ClientSize = new System.Drawing.Size(884, 742);
+			this.Controls.Add(this.priceTextBox1);
 			this.Controls.Add(this.pboxLogo);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.groupBox1);
@@ -254,10 +258,12 @@ namespace PV_Autolavado
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.panel1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.pboxLogo)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pboxLogo)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 		}
+		private PV_Autolavado.PriceTextBox priceTextBox1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Total;
 		private System.Windows.Forms.DataGridViewTextBoxColumn IVA;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Costo;
