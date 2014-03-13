@@ -28,9 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.txtTotal = new System.Windows.Forms.TextBox();
-			this.txtSubtotal = new System.Windows.Forms.TextBox();
-			this.txtIVA = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
@@ -38,6 +35,9 @@
 			this.btnTotal = new System.Windows.Forms.Button();
 			this.btnOpciones = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.ptxtSubtotal = new PV_Autolavado.PriceTextBox();
+			this.ptxtIVA = new PV_Autolavado.PriceTextBox();
+			this.ptxtTotal = new PV_Autolavado.PriceTextBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.dgvVentas = new System.Windows.Forms.DataGridView();
 			this.numero_servicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,50 +46,16 @@
 			this.IVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.pboxLogo = new System.Windows.Forms.PictureBox();
-			this.priceTextBox1 = new PV_Autolavado.PriceTextBox();
 			this.groupBox1.SuspendLayout();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pboxLogo)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// txtTotal
-			// 
-			this.txtTotal.BackColor = System.Drawing.Color.Black;
-			this.txtTotal.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtTotal.ForeColor = System.Drawing.Color.Lime;
-			this.txtTotal.Location = new System.Drawing.Point(136, 157);
-			this.txtTotal.Name = "txtTotal";
-			this.txtTotal.Size = new System.Drawing.Size(200, 81);
-			this.txtTotal.TabIndex = 12;
-			this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-			// 
-			// txtSubtotal
-			// 
-			this.txtSubtotal.BackColor = System.Drawing.Color.Black;
-			this.txtSubtotal.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtSubtotal.ForeColor = System.Drawing.Color.Lime;
-			this.txtSubtotal.Location = new System.Drawing.Point(136, 19);
-			this.txtSubtotal.Name = "txtSubtotal";
-			this.txtSubtotal.Size = new System.Drawing.Size(150, 63);
-			this.txtSubtotal.TabIndex = 10;
-			this.txtSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-			// 
-			// txtIVA
-			// 
-			this.txtIVA.BackColor = System.Drawing.Color.Black;
-			this.txtIVA.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtIVA.ForeColor = System.Drawing.Color.Lime;
-			this.txtIVA.Location = new System.Drawing.Point(136, 88);
-			this.txtIVA.Name = "txtIVA";
-			this.txtIVA.Size = new System.Drawing.Size(150, 63);
-			this.txtIVA.TabIndex = 11;
-			this.txtIVA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-			// 
 			// label1
 			// 
 			this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(30, 49);
+			this.label1.Location = new System.Drawing.Point(6, 49);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(100, 23);
 			this.label1.TabIndex = 5;
@@ -99,7 +65,7 @@
 			// label2
 			// 
 			this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(30, 118);
+			this.label2.Location = new System.Drawing.Point(6, 118);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(100, 23);
 			this.label2.TabIndex = 6;
@@ -109,7 +75,7 @@
 			// label3
 			// 
 			this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(30, 200);
+			this.label3.Location = new System.Drawing.Point(6, 200);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(100, 23);
 			this.label3.TabIndex = 7;
@@ -148,9 +114,9 @@
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.txtTotal);
-			this.groupBox1.Controls.Add(this.txtSubtotal);
-			this.groupBox1.Controls.Add(this.txtIVA);
+			this.groupBox1.Controls.Add(this.ptxtSubtotal);
+			this.groupBox1.Controls.Add(this.ptxtIVA);
+			this.groupBox1.Controls.Add(this.ptxtTotal);
 			this.groupBox1.Controls.Add(this.label1);
 			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.label2);
@@ -161,6 +127,45 @@
 			this.groupBox1.TabIndex = 13;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "TOTAL";
+			// 
+			// ptxtSubtotal
+			// 
+			this.ptxtSubtotal.BackColor = System.Drawing.Color.Black;
+			this.ptxtSubtotal.Cantidad = 0D;
+			this.ptxtSubtotal.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ptxtSubtotal.ForeColor = System.Drawing.Color.Lime;
+			this.ptxtSubtotal.Location = new System.Drawing.Point(112, 19);
+			this.ptxtSubtotal.Name = "ptxtSubtotal";
+			this.ptxtSubtotal.Size = new System.Drawing.Size(222, 63);
+			this.ptxtSubtotal.TabIndex = 10;
+			this.ptxtSubtotal.Text = "$0.00";
+			this.ptxtSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			// 
+			// ptxtIVA
+			// 
+			this.ptxtIVA.BackColor = System.Drawing.Color.Black;
+			this.ptxtIVA.Cantidad = 0D;
+			this.ptxtIVA.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ptxtIVA.ForeColor = System.Drawing.Color.Lime;
+			this.ptxtIVA.Location = new System.Drawing.Point(112, 88);
+			this.ptxtIVA.Name = "ptxtIVA";
+			this.ptxtIVA.Size = new System.Drawing.Size(222, 63);
+			this.ptxtIVA.TabIndex = 9;
+			this.ptxtIVA.Text = "$0.00";
+			this.ptxtIVA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			// 
+			// ptxtTotal
+			// 
+			this.ptxtTotal.BackColor = System.Drawing.Color.Black;
+			this.ptxtTotal.Cantidad = 0D;
+			this.ptxtTotal.Font = new System.Drawing.Font("Arial", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ptxtTotal.ForeColor = System.Drawing.Color.Lime;
+			this.ptxtTotal.Location = new System.Drawing.Point(112, 157);
+			this.ptxtTotal.Name = "ptxtTotal";
+			this.ptxtTotal.Size = new System.Drawing.Size(222, 76);
+			this.ptxtTotal.TabIndex = 8;
+			this.ptxtTotal.Text = "$0.00";
+			this.ptxtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			// 
 			// panel1
 			// 
@@ -230,22 +235,11 @@
 			this.pboxLogo.TabIndex = 15;
 			this.pboxLogo.TabStop = false;
 			// 
-			// priceTextBox1
-			// 
-			this.priceTextBox1.Cantidad = 10.00D;
-			this.priceTextBox1.Location = new System.Drawing.Point(378, 15);
-			this.priceTextBox1.Name = "priceTextBox1";
-			this.priceTextBox1.Size = new System.Drawing.Size(100, 20);
-			this.priceTextBox1.TabIndex = 16;
-			this.priceTextBox1.Text = "$0.00";
-			this.priceTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-			// 
 			// Pantalla_Ventas
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(884, 742);
-			this.Controls.Add(this.priceTextBox1);
 			this.Controls.Add(this.pboxLogo);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.groupBox1);
@@ -261,9 +255,10 @@
 			((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pboxLogo)).EndInit();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 		}
-		private PV_Autolavado.PriceTextBox priceTextBox1;
+		private PV_Autolavado.PriceTextBox ptxtTotal;
+		private PV_Autolavado.PriceTextBox ptxtIVA;
+		private PV_Autolavado.PriceTextBox ptxtSubtotal;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Total;
 		private System.Windows.Forms.DataGridViewTextBoxColumn IVA;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Costo;
@@ -279,8 +274,5 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox txtIVA;
-		private System.Windows.Forms.TextBox txtSubtotal;
-		private System.Windows.Forms.TextBox txtTotal;
 	}
 }

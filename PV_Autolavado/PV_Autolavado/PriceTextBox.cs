@@ -28,6 +28,11 @@ namespace PV_Autolavado
 			this.Text = "$" + (cantidad).ToString("N2");
 		}
 		
+		public void Default(){
+			this.cantidad = 0;
+			this.Text = cantidad.ToString("N2");
+		}
+		
 		public Double Cantidad{
 			set{ this.cantidad = value; }
 			get{ return this.cantidad; }

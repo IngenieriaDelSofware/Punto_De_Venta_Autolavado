@@ -16,20 +16,26 @@ namespace PV_Autolavado
 		void Pantalla_VentasLoad(object sender, EventArgs e)
 		{
 			this.Text = "Ventas " + "Usuario";
-			this.txtSubtotal.Text = "$ 0.00";
-			this.txtIVA.Text = "$ 0.00";
-			this.txtTotal.Text = "$ 0.00";			
+		
 		}
 		
 		void BtnAgregarServicioClick(object sender, EventArgs e)
 		{
 			dgvVentas.Rows.Add(n, "Servicio 1", "$ 10.00", "$ 1.60", "$ 11.60");
+			this.ptxtSubtotal.Sumar(10.00);
+			this.ptxtIVA.Sumar(1.60);
+			this.ptxtTotal.Sumar(11.60);
 			n++;
 		}
 		
 		void BtnTotalClick(object sender, EventArgs e)
 		{
-			MessageBox.Show("Usted a ahorrado un putero");
+			MessageBox.Show("Usted debe un total de: \n" + this.ptxtTotal.Text + "\n Ahorro un putero");
+			n=1;
+			this.dgvVentas.RowCount = 1;
+			this.ptxtSubtotal.Default();
+			this.ptxtIVA.Default();
+			this.ptxtTotal.Default();
 		}
 		
 		void BtnOpcionesClick(object sender, EventArgs e)
