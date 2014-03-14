@@ -28,15 +28,10 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
 			this.btnAgregarServicio = new System.Windows.Forms.Button();
 			this.btnTotal = new System.Windows.Forms.Button();
 			this.btnOpciones = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.ptxtSubtotal = new PV_Autolavado.PriceTextBox();
-			this.ptxtIVA = new PV_Autolavado.PriceTextBox();
 			this.ptxtTotal = new PV_Autolavado.PriceTextBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.dgvVentas = new System.Windows.Forms.DataGridView();
@@ -51,36 +46,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pboxLogo)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// label1
-			// 
-			this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(6, 49);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(100, 23);
-			this.label1.TabIndex = 5;
-			this.label1.Text = "SubTotal";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// label2
-			// 
-			this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(6, 118);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(100, 23);
-			this.label2.TabIndex = 6;
-			this.label2.Text = "IVA";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// label3
-			// 
-			this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(6, 200);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(100, 23);
-			this.label3.TabIndex = 7;
-			this.label3.Text = "Total";
-			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// btnAgregarServicio
 			// 
@@ -114,45 +79,15 @@
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.ptxtSubtotal);
-			this.groupBox1.Controls.Add(this.ptxtIVA);
 			this.groupBox1.Controls.Add(this.ptxtTotal);
-			this.groupBox1.Controls.Add(this.label1);
-			this.groupBox1.Controls.Add(this.label3);
-			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.groupBox1.Location = new System.Drawing.Point(532, 496);
+			this.groupBox1.Location = new System.Drawing.Point(532, 633);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(340, 247);
+			this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.groupBox1.Size = new System.Drawing.Size(340, 101);
 			this.groupBox1.TabIndex = 13;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "TOTAL";
-			// 
-			// ptxtSubtotal
-			// 
-			this.ptxtSubtotal.BackColor = System.Drawing.Color.Black;
-			this.ptxtSubtotal.Cantidad = 0D;
-			this.ptxtSubtotal.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.ptxtSubtotal.ForeColor = System.Drawing.Color.Lime;
-			this.ptxtSubtotal.Location = new System.Drawing.Point(112, 19);
-			this.ptxtSubtotal.Name = "ptxtSubtotal";
-			this.ptxtSubtotal.Size = new System.Drawing.Size(222, 63);
-			this.ptxtSubtotal.TabIndex = 10;
-			this.ptxtSubtotal.Text = "$0.00";
-			this.ptxtSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-			// 
-			// ptxtIVA
-			// 
-			this.ptxtIVA.BackColor = System.Drawing.Color.Black;
-			this.ptxtIVA.Cantidad = 0D;
-			this.ptxtIVA.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.ptxtIVA.ForeColor = System.Drawing.Color.Lime;
-			this.ptxtIVA.Location = new System.Drawing.Point(112, 88);
-			this.ptxtIVA.Name = "ptxtIVA";
-			this.ptxtIVA.Size = new System.Drawing.Size(222, 63);
-			this.ptxtIVA.TabIndex = 9;
-			this.ptxtIVA.Text = "$0.00";
-			this.ptxtIVA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			// 
 			// ptxtTotal
 			// 
@@ -160,7 +95,7 @@
 			this.ptxtTotal.Cantidad = 0D;
 			this.ptxtTotal.Font = new System.Drawing.Font("Arial", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.ptxtTotal.ForeColor = System.Drawing.Color.Lime;
-			this.ptxtTotal.Location = new System.Drawing.Point(112, 157);
+			this.ptxtTotal.Location = new System.Drawing.Point(112, 15);
 			this.ptxtTotal.Name = "ptxtTotal";
 			this.ptxtTotal.Size = new System.Drawing.Size(222, 76);
 			this.ptxtTotal.TabIndex = 8;
@@ -257,8 +192,6 @@
 			this.ResumeLayout(false);
 		}
 		private PV_Autolavado.PriceTextBox ptxtTotal;
-		private PV_Autolavado.PriceTextBox ptxtIVA;
-		private PV_Autolavado.PriceTextBox ptxtSubtotal;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Total;
 		private System.Windows.Forms.DataGridViewTextBoxColumn IVA;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Costo;
@@ -271,8 +204,5 @@
 		private System.Windows.Forms.Button btnOpciones;
 		private System.Windows.Forms.Button btnTotal;
 		private System.Windows.Forms.Button btnAgregarServicio;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label1;
 	}
 }
