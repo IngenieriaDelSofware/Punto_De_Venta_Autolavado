@@ -49,7 +49,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="mysql.cs" />
+    <Compile Include="Conexion\mysql.cs" />
+    <Compile Include="Conexion\query.cs" />
+    <Compile Include="Entidates\detalle_ticket.cs" />
+    <Compile Include="Entidates\ticket.cs" />
     <Compile Include="Pantalla_Ventas.cs" />
     <Compile Include="Pantalla_Ventas.Designer.cs">
       <DependentUpon>Pantalla_Ventas.cs</DependentUpon>
@@ -62,6 +65,10 @@
     <EmbeddedResource Include="Pantalla_Ventas.resx">
       <DependentUpon>Pantalla_Ventas.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Conexion" />
+    <Folder Include="Entidates" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
