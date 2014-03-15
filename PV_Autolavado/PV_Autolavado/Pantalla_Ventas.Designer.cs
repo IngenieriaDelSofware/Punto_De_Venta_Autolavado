@@ -33,21 +33,21 @@
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.ptxtTotal = new PV_Autolavado.PriceTextBox();
 			this.dgvVentas = new System.Windows.Forms.DataGridView();
-			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.lblMarca = new System.Windows.Forms.Label();
-			this.lblTicket = new System.Windows.Forms.Label();
-			this.lblPropietario = new System.Windows.Forms.Label();
-			this.lblModelo = new System.Windows.Forms.Label();
-			this.lblPlacas = new System.Windows.Forms.Label();
 			this.numero_servicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.id_Servicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ahorro = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.lblMarca = new System.Windows.Forms.Label();
+			this.lblPropietario = new System.Windows.Forms.Label();
+			this.lblModelo = new System.Windows.Forms.Label();
+			this.lblPlacas = new System.Windows.Forms.Label();
+			this.lblTicket = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
+			this.lblUsuario = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
 			this.groupBox2.SuspendLayout();
@@ -116,67 +116,6 @@
 			this.dgvVentas.Size = new System.Drawing.Size(860, 415);
 			this.dgvVentas.TabIndex = 0;
 			// 
-			// groupBox2
-			// 
-			this.groupBox2.Controls.Add(this.lblMarca);
-			this.groupBox2.Controls.Add(this.lblPropietario);
-			this.groupBox2.Controls.Add(this.lblModelo);
-			this.groupBox2.Controls.Add(this.lblPlacas);
-			this.groupBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-			this.groupBox2.Location = new System.Drawing.Point(449, 12);
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(423, 124);
-			this.groupBox2.TabIndex = 17;
-			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "Datos del Vehiculo";
-			// 
-			// lblMarca
-			// 
-			this.lblMarca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-			this.lblMarca.Location = new System.Drawing.Point(6, 73);
-			this.lblMarca.Name = "lblMarca";
-			this.lblMarca.Size = new System.Drawing.Size(100, 23);
-			this.lblMarca.TabIndex = 2;
-			this.lblMarca.Text = "Marca";
-			// 
-			// lblTicket
-			// 
-			this.lblTicket.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblTicket.ForeColor = System.Drawing.Color.Blue;
-			this.lblTicket.Location = new System.Drawing.Point(105, 37);
-			this.lblTicket.Name = "lblTicket";
-			this.lblTicket.Size = new System.Drawing.Size(79, 23);
-			this.lblTicket.TabIndex = 4;
-			this.lblTicket.Text = "Ticket";
-			// 
-			// lblPropietario
-			// 
-			this.lblPropietario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-			this.lblPropietario.Location = new System.Drawing.Point(6, 27);
-			this.lblPropietario.Name = "lblPropietario";
-			this.lblPropietario.Size = new System.Drawing.Size(100, 23);
-			this.lblPropietario.TabIndex = 1;
-			this.lblPropietario.Text = "Propietario";
-			// 
-			// lblModelo
-			// 
-			this.lblModelo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-			this.lblModelo.Location = new System.Drawing.Point(6, 96);
-			this.lblModelo.Name = "lblModelo";
-			this.lblModelo.Size = new System.Drawing.Size(100, 23);
-			this.lblModelo.TabIndex = 5;
-			this.lblModelo.Text = "Modelo";
-			// 
-			// lblPlacas
-			// 
-			this.lblPlacas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-			this.lblPlacas.Location = new System.Drawing.Point(6, 50);
-			this.lblPlacas.Name = "lblPlacas";
-			this.lblPlacas.Size = new System.Drawing.Size(100, 23);
-			this.lblPlacas.TabIndex = 0;
-			this.lblPlacas.Text = "Placas";
-			// 
 			// numero_servicio
 			// 
 			this.numero_servicio.HeaderText = "N°";
@@ -215,6 +154,67 @@
 			this.Total.Name = "Total";
 			this.Total.ReadOnly = true;
 			// 
+			// groupBox2
+			// 
+			this.groupBox2.Controls.Add(this.lblMarca);
+			this.groupBox2.Controls.Add(this.lblPropietario);
+			this.groupBox2.Controls.Add(this.lblModelo);
+			this.groupBox2.Controls.Add(this.lblPlacas);
+			this.groupBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+			this.groupBox2.Location = new System.Drawing.Point(449, 12);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new System.Drawing.Size(423, 124);
+			this.groupBox2.TabIndex = 17;
+			this.groupBox2.TabStop = false;
+			this.groupBox2.Text = "Datos del Vehiculo";
+			// 
+			// lblMarca
+			// 
+			this.lblMarca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+			this.lblMarca.Location = new System.Drawing.Point(6, 73);
+			this.lblMarca.Name = "lblMarca";
+			this.lblMarca.Size = new System.Drawing.Size(100, 23);
+			this.lblMarca.TabIndex = 2;
+			this.lblMarca.Text = "Marca";
+			// 
+			// lblPropietario
+			// 
+			this.lblPropietario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+			this.lblPropietario.Location = new System.Drawing.Point(6, 27);
+			this.lblPropietario.Name = "lblPropietario";
+			this.lblPropietario.Size = new System.Drawing.Size(100, 23);
+			this.lblPropietario.TabIndex = 1;
+			this.lblPropietario.Text = "Propietario";
+			// 
+			// lblModelo
+			// 
+			this.lblModelo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+			this.lblModelo.Location = new System.Drawing.Point(6, 96);
+			this.lblModelo.Name = "lblModelo";
+			this.lblModelo.Size = new System.Drawing.Size(100, 23);
+			this.lblModelo.TabIndex = 5;
+			this.lblModelo.Text = "Modelo";
+			// 
+			// lblPlacas
+			// 
+			this.lblPlacas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+			this.lblPlacas.Location = new System.Drawing.Point(6, 50);
+			this.lblPlacas.Name = "lblPlacas";
+			this.lblPlacas.Size = new System.Drawing.Size(100, 23);
+			this.lblPlacas.TabIndex = 0;
+			this.lblPlacas.Text = "Placas";
+			// 
+			// lblTicket
+			// 
+			this.lblTicket.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblTicket.ForeColor = System.Drawing.Color.Blue;
+			this.lblTicket.Location = new System.Drawing.Point(105, 37);
+			this.lblTicket.Name = "lblTicket";
+			this.lblTicket.Size = new System.Drawing.Size(79, 23);
+			this.lblTicket.TabIndex = 4;
+			this.lblTicket.Text = "Ticket";
+			// 
 			// label1
 			// 
 			this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -237,15 +237,15 @@
 			this.label2.TabIndex = 19;
 			this.label2.Text = "Usuario";
 			// 
-			// label3
+			// lblUsuario
 			// 
-			this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.ForeColor = System.Drawing.Color.Blue;
-			this.label3.Location = new System.Drawing.Point(105, 9);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(113, 23);
-			this.label3.TabIndex = 20;
-			this.label3.Text = "Username";
+			this.lblUsuario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblUsuario.ForeColor = System.Drawing.Color.Blue;
+			this.lblUsuario.Location = new System.Drawing.Point(105, 9);
+			this.lblUsuario.Name = "lblUsuario";
+			this.lblUsuario.Size = new System.Drawing.Size(113, 23);
+			this.lblUsuario.TabIndex = 20;
+			this.lblUsuario.Text = "Username";
 			// 
 			// Pantalla_Ventas
 			// 
@@ -253,7 +253,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(884, 742);
-			this.Controls.Add(this.label3);
+			this.Controls.Add(this.lblUsuario);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.groupBox2);
@@ -271,7 +271,7 @@
 			this.groupBox2.ResumeLayout(false);
 			this.ResumeLayout(false);
 		}
-		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label lblUsuario;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Total;

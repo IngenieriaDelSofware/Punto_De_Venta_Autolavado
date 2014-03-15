@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using MySql.Data.MySqlClient;
+using PV_Autolavado.Entidates;
 
 namespace PV_Autolavado
 {
@@ -8,6 +10,41 @@ namespace PV_Autolavado
 	{
 		private MySqlDataReader scanner;
 		private MySqlCommand comando;
+		
+		
+		public void guardarTicket(ticket nota){
+			
+			this.conectarMySQL();
+			string sql = ("INSERT INTO `punto_venta_autolavado`.`ticket`" +
+				" (`id_usuario`,`id_lavador`,`propietario`,`placas`,`marca`,`modelo`,`color`,`total`,`hora`,`fecha`) " + 
+				" VALUES (" +
+				nota.id_usuario + "," +
+				nota.id_lavador + "," +
+				nota.propietario + "," +
+				nota.placas + "," +
+				nota.marca + "," +
+				nota.modelo + "," +
+				nota.color + "," +
+				nota.total + "," +
+				nota.hora + "," +
+				nota.fecha + ");");
+			
+			this.ejecutarQuery(sql);
+			
+			for (int i=0; i<=nota.desglose.Count; i++){
+				
+			sql = ("INSERT INTO `punto_venta_autolavado`.`detalle_ticket`(`id_ticket`,`id_servicio`,`id_tamano`,`promocion`)" + 
+						"VALUES (" +
+						nota.desglose[i].id_ticket + "," +
+						nota.desglose[i].id_servicio + "," +
+						nota.desglose[i].id_tamano + "," +
+						nota.desglose[i].promocion + ");");
+			
+			this.ejecutarQuery(sql);
+			
+			}
+			this.desconectarMySQL();
+		}
 		
 		public int ultimoRegistro(string tabla, string columna){
 			

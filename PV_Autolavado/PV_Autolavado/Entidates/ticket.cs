@@ -10,7 +10,8 @@ namespace PV_Autolavado.Entidates
 
 	public class ticket
 	{
-
+		
+		public int id_ticket
 		public int id_usuario;
 		public int id_lavador;
 		public string propietario;
@@ -19,8 +20,8 @@ namespace PV_Autolavado.Entidates
 		public string modelo;
 		public int color;
 		public double total;
-		//public DateTime.Now.TimeOfDay hora;
-		//public DateTime.Now.Date fecha;
+		public DateTime hora;
+		public DateTime fecha;
 		public List<detalle_ticket> desglose;
 		
 	}

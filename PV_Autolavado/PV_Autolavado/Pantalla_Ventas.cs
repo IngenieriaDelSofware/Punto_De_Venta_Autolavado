@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-//using PV_Autolavado.Conexion;
+using PV_Autolavado.Entidates;
 
 namespace PV_Autolavado
 {
@@ -45,6 +45,38 @@ namespace PV_Autolavado
 		void BtnOpcionesClick(object sender, EventArgs e)
 		{
 			MessageBox.Show("Aqui va un menu de Opciones \n En caso de existir");
+		}
+		
+		private void guradarTicket(){
+			
+			ticket t = new ticket();
+			
+		/*public List<detalle_ticket> desglose;*/
+			
+			t.id_usuario = 1;
+			t.id_lavador = 1;
+			t.propietario = lblPropietario.Text;
+			t.placas = lblPlacas.Text;
+			t.marca = lblMarca.Text;
+			t.modelo = lblModelo.Text;
+			t.color = 1;
+			t.total = ptxtTotal.Text;
+			t.hora = DateTime.Today.TimeOfDay;
+			t.fecha = DateTime.Today.Date;
+			
+			
+			for(int i=0; i<=this.dgvVentas.Rows.Count; i++){
+				/*public int id_detalle;
+		public int id_ticket;
+		public int id_servicio;
+		public int id_tamano;
+		public int promocion;*/
+			}
+			
+		}
+		
+		private void reiniciaPantalla(){
+			
 		}
 
 	}
