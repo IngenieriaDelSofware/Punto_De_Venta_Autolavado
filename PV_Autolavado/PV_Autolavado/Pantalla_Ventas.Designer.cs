@@ -98,7 +98,6 @@
 			this.ptxtTotal.TabIndex = 8;
 			this.ptxtTotal.Text = "$0.00";
 			this.ptxtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-			this.ptxtTotal.TextChanged += new System.EventHandler(this.PtxtTotalTextChanged);
 			// 
 			// dgvVentas
 			// 

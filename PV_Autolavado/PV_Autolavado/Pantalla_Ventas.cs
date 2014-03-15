@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+//using PV_Autolavado.Conexion;
 
 namespace PV_Autolavado
 {
@@ -8,6 +9,8 @@ namespace PV_Autolavado
 	public partial class Pantalla_Ventas : Form
 	{
 		public int n=1;
+		private query query;
+		
 		public Pantalla_Ventas()
 		{
 			InitializeComponent();
@@ -16,6 +19,9 @@ namespace PV_Autolavado
 		void Pantalla_VentasLoad(object sender, EventArgs e)
 		{
 			this.Text = "Usuario: " + "Aqui va el nombre del usuario, " + "Ventas";
+			query = new query();
+			int t = query.ultimoRegistro("ticket", "id_ticket");
+			this.lblTicket.Text = (t+1).ToString();
 		
 		}
 		
@@ -41,10 +47,5 @@ namespace PV_Autolavado
 			MessageBox.Show("Aqui va un menu de Opciones \n En caso de existir");
 		}
 
-		
-		void PtxtTotalTextChanged(object sender, EventArgs e)
-		{
-			
-		}
 	}
 }

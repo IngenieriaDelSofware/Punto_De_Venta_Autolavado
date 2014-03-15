@@ -8,24 +8,28 @@
  
 using System;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace PV_Autolavado
 {
 	public class mysql
 	{
 		private String server = "localhost";
-		private String userid = "Modificar"; /*Modificar esta variable*/
-		private String password = "Modificar"; /*Modificar esta variable*/
+		private String userid = "root"; /*Modificar esta variable*/
+		private String password = "anerol88"; /*Modificar esta variable*/
 		private String database = "punto_venta_autolavado";
-		private MySqlConnection conexion;
+		protected MySqlConnection conexion;
 		
 		public void conectarMySQL(){
+			try{
 		
 			String cadenaConexion = ("server=" + server + "; database=" + database + "; Uid=" + userid + "; pwd=" + password + ";");
 			
 			conexion = new MySqlConnection(cadenaConexion);
 			conexion.Open();
-			
+			}catch(MySqlException mysqle){
+				MessageBox.Show(mysqle.ToString());
+			}
 		}
 		
 		public void desconectarMySQL(){
