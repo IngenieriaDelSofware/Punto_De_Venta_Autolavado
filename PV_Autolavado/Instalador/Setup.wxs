@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*"
+		Name=""
+		Language="1033"
+		Version="1.0.0.0"
+		UpgradeCode="75325598-2A5C-4C70-B257-3F0A848F02B1"
+		Manufacturer="">
+		<Package Description=""
+			Comments= "Comments"
+			InstallerVersion="200"
+			Compressed="yes"
+		/>
+	</Product>
+</Wix>

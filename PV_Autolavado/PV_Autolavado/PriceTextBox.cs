@@ -11,12 +11,12 @@ namespace PV_Autolavado
 		public PriceTextBox()
 		{
 			this.Text = "$" + (cantidad).ToString("N2");
-			this.TextAlign = HorizontalAlignment.Right;
+			this.TextAlign = HorizontalAlignment.Left;
 		}
 		
 		public PriceTextBox(Double cant){
 			this.Text = "$" + (cant).ToString("N2");
-			this.TextAlign = HorizontalAlignment.Right;
+			this.TextAlign = HorizontalAlignment.Left;
 		}
 		
 		public void PonerCantidad(Double cant){

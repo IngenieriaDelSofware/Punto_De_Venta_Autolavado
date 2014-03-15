@@ -15,7 +15,7 @@ namespace PV_Autolavado
 		
 		void Pantalla_VentasLoad(object sender, EventArgs e)
 		{
-			this.Text = "Ventas " + "Usuario";
+			this.Text = "Usuario: " + "Aqui va el nombre del usuario, " + "Ventas";
 		
 		}
 		
@@ -41,5 +41,10 @@ namespace PV_Autolavado
 			MessageBox.Show("Aqui va un menu de Opciones \n En caso de existir");
 		}
 
+		
+		void PtxtTotalTextChanged(object sender, EventArgs e)
+		{
+			
+		}
 	}
 }

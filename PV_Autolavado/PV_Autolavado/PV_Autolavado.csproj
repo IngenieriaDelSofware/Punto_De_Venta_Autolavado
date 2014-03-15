@@ -31,6 +31,8 @@
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data" />
+    <Reference Include="MySql.Data.Entity" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -47,6 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="mysql.cs" />
     <Compile Include="Pantalla_Ventas.cs" />
     <Compile Include="Pantalla_Ventas.Designer.cs">
       <DependentUpon>Pantalla_Ventas.cs</DependentUpon>
