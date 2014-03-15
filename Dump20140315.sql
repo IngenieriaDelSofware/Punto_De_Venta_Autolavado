@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `punto_venta_autolavado` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `punto_venta_autolavado`;
--- MySQL dump 10.13  Distrib 5.5.35, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.6.13, for Win32 (x86)
 --
 -- Host: localhost    Database: punto_venta_autolavado
 -- ------------------------------------------------------
--- Server version	5.5.35-0ubuntu0.13.10.2
+-- Server version	5.6.16
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -28,7 +28,7 @@ CREATE TABLE `cat_color` (
   `id_color` int(11) NOT NULL AUTO_INCREMENT,
   `descripcion` varchar(45) NOT NULL,
   PRIMARY KEY (`id_color`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,6 +37,7 @@ CREATE TABLE `cat_color` (
 
 LOCK TABLES `cat_color` WRITE;
 /*!40000 ALTER TABLE `cat_color` DISABLE KEYS */;
+INSERT INTO `cat_color` VALUES (1,'rojo');
 /*!40000 ALTER TABLE `cat_color` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -130,6 +131,7 @@ CREATE TABLE `ticket` (
   `id_ticket` int(11) NOT NULL AUTO_INCREMENT,
   `id_usuario` int(11) NOT NULL,
   `id_lavador` int(11) NOT NULL,
+  `propietario` varchar(45) NOT NULL,
   `placas` varchar(7) NOT NULL,
   `marca` varchar(45) NOT NULL,
   `modelo` varchar(45) NOT NULL,
@@ -140,9 +142,9 @@ CREATE TABLE `ticket` (
   PRIMARY KEY (`id_ticket`),
   KEY `fk_ticket_usuario_idx` (`id_usuario`),
   KEY `fk_ticket_color_idx` (`color`),
-  CONSTRAINT `fk_ticket_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_ticket_color` FOREIGN KEY (`color`) REFERENCES `cat_color` (`id_color`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CONSTRAINT `fk_ticket_color` FOREIGN KEY (`color`) REFERENCES `cat_color` (`id_color`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_ticket_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -151,6 +153,7 @@ CREATE TABLE `ticket` (
 
 LOCK TABLES `ticket` WRITE;
 /*!40000 ALTER TABLE `ticket` DISABLE KEYS */;
+INSERT INTO `ticket` VALUES (3,1,321,'ljlkj','lkjlk','lkjlkj','lkjlkj',1,12.5,'00:00:00','0000-00-00');
 /*!40000 ALTER TABLE `ticket` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,7 +175,7 @@ CREATE TABLE `usuarios` (
   `fec ingreso` date DEFAULT NULL,
   `puesto` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -181,6 +184,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (1,'oiu','oiu','oiu','oiu','oiu','0000-00-00','0000-00-00','lkjlk');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -193,4 +197,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-03-14 22:13:14
+-- Dump completed on 2014-03-15 12:45:46
