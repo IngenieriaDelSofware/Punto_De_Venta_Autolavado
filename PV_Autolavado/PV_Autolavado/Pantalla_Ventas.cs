@@ -47,11 +47,11 @@ namespace PV_Autolavado
 			MessageBox.Show("Aqui va un menu de Opciones \n En caso de existir");
 		}
 		
-		private void guradarTicket(){
+		/*private void guradarTicket(){
 			
 			ticket t = new ticket();
 			
-		/*public List<detalle_ticket> desglose;*/
+		public List<detalle_ticket> desglose;
 			
 			t.id_usuario = 1;
 			t.id_lavador = 1;
@@ -60,24 +60,26 @@ namespace PV_Autolavado
 			t.marca = lblMarca.Text;
 			t.modelo = lblModelo.Text;
 			t.color = 1;
-			t.total = ptxtTotal.Text;
+			t.total = Double.Parse(ptxtTotal.Text);
 			t.hora = DateTime.Today.TimeOfDay;
 			t.fecha = DateTime.Today.Date;
 			
 			
 			for(int i=0; i<=this.dgvVentas.Rows.Count; i++){
-				/*public int id_detalle;
+				public int id_detalle;
 		public int id_ticket;
 		public int id_servicio;
-		public int id_tamano;
-		public int promocion;*/
+		public int promocion;
+				 ahorro
+				
+				
 			}
 			
 		}
 		
 		private void reiniciaPantalla(){
 			
-		}
+		}*/
 
 	}
 }

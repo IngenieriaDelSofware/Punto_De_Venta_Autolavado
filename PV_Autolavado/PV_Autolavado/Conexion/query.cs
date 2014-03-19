@@ -37,8 +37,8 @@ namespace PV_Autolavado
 						"VALUES (" +
 						nota.desglose[i].id_ticket + "," +
 						nota.desglose[i].id_servicio + "," +
-						nota.desglose[i].id_tamano + "," +
-						nota.desglose[i].promocion + ");");
+						nota.desglose[i].promocion + "," +
+						nota.desglose[i].ahorro + ");");
 			
 			this.ejecutarQuery(sql);
 			

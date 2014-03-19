@@ -15,8 +15,8 @@ namespace PV_Autolavado
 	public class mysql
 	{
 		private String server = "localhost";
-		private String userid = "root"; /*Modificar esta variable*/
-		private String password = "anerol88"; /*Modificar esta variable*/
+		private String userid = "el_charco"; /*Modificar esta variable*/
+		private String password = "12345Charco"; /*Modificar esta variable*/
 		private String database = "punto_venta_autolavado";
 		protected MySqlConnection conexion;
 		

@@ -11,7 +11,7 @@ namespace PV_Autolavado.Entidates
 	public class ticket
 	{
 		
-		public int id_ticket
+		public int id_ticket;
 		public int id_usuario;
 		public int id_lavador;
 		public string propietario;
