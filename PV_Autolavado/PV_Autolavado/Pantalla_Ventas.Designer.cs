@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.btnAgregarServicio = new System.Windows.Forms.Button();
 			this.btnTotal = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -48,6 +49,8 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.lblUsuario = new System.Windows.Forms.Label();
+			this.btnNuevoCobro = new System.Windows.Forms.Button();
+			this.contadorReloj = new System.Windows.Forms.Timer(this.components);
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
 			this.groupBox2.SuspendLayout();
@@ -55,7 +58,7 @@
 			// 
 			// btnAgregarServicio
 			// 
-			this.btnAgregarServicio.Location = new System.Drawing.Point(12, 62);
+			this.btnAgregarServicio.Location = new System.Drawing.Point(93, 68);
 			this.btnAgregarServicio.Name = "btnAgregarServicio";
 			this.btnAgregarServicio.Size = new System.Drawing.Size(75, 81);
 			this.btnAgregarServicio.TabIndex = 1;
@@ -65,7 +68,7 @@
 			// 
 			// btnTotal
 			// 
-			this.btnTotal.Location = new System.Drawing.Point(93, 63);
+			this.btnTotal.Location = new System.Drawing.Point(174, 68);
 			this.btnTotal.Name = "btnTotal";
 			this.btnTotal.Size = new System.Drawing.Size(75, 80);
 			this.btnTotal.TabIndex = 9;
@@ -78,10 +81,10 @@
 			this.groupBox1.Controls.Add(this.ptxtTotal);
 			this.groupBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.groupBox1.ForeColor = System.Drawing.Color.Blue;
-			this.groupBox1.Location = new System.Drawing.Point(455, 576);
+			this.groupBox1.Location = new System.Drawing.Point(580, 576);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.groupBox1.Size = new System.Drawing.Size(417, 154);
+			this.groupBox1.Size = new System.Drawing.Size(292, 107);
 			this.groupBox1.TabIndex = 13;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "TOTAL";
@@ -90,11 +93,11 @@
 			// 
 			this.ptxtTotal.BackColor = System.Drawing.Color.Black;
 			this.ptxtTotal.Cantidad = 0D;
-			this.ptxtTotal.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ptxtTotal.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.ptxtTotal.ForeColor = System.Drawing.Color.Lime;
-			this.ptxtTotal.Location = new System.Drawing.Point(6, 25);
+			this.ptxtTotal.Location = new System.Drawing.Point(6, 16);
 			this.ptxtTotal.Name = "ptxtTotal";
-			this.ptxtTotal.Size = new System.Drawing.Size(405, 118);
+			this.ptxtTotal.Size = new System.Drawing.Size(279, 81);
 			this.ptxtTotal.TabIndex = 8;
 			this.ptxtTotal.Text = "$0.00";
 			this.ptxtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -247,12 +250,28 @@
 			this.lblUsuario.TabIndex = 20;
 			this.lblUsuario.Text = "Username";
 			// 
+			// btnNuevoCobro
+			// 
+			this.btnNuevoCobro.Location = new System.Drawing.Point(12, 68);
+			this.btnNuevoCobro.Name = "btnNuevoCobro";
+			this.btnNuevoCobro.Size = new System.Drawing.Size(75, 81);
+			this.btnNuevoCobro.TabIndex = 21;
+			this.btnNuevoCobro.Text = "Nuevo Cobro";
+			this.btnNuevoCobro.UseVisualStyleBackColor = true;
+			// 
+			// contadorReloj
+			// 
+			this.contadorReloj.Enabled = true;
+			this.contadorReloj.Interval = 1000;
+			this.contadorReloj.Tick += new System.EventHandler(this.ContadorRelojTick);
+			// 
 			// Pantalla_Ventas
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(884, 742);
+			this.ClientSize = new System.Drawing.Size(884, 691);
+			this.Controls.Add(this.btnNuevoCobro);
 			this.Controls.Add(this.lblUsuario);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
@@ -271,6 +290,8 @@
 			this.groupBox2.ResumeLayout(false);
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.Timer contadorReloj;
+		private System.Windows.Forms.Button btnNuevoCobro;
 		private System.Windows.Forms.Label lblUsuario;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;

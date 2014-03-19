@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Collections.Generic;
 using PV_Autolavado.Entidates;
 
 namespace PV_Autolavado
@@ -18,7 +19,8 @@ namespace PV_Autolavado
 		
 		void Pantalla_VentasLoad(object sender, EventArgs e)
 		{
-			this.Text = "Usuario: " + "Aqui va el nombre del usuario, " + "Ventas";
+
+			this.Text = DateTime.Now.ToLongDateString() + "-" + DateTime.Now.ToLongTimeString();
 			query = new query();
 			int t = query.ultimoRegistro("ticket", "id_ticket");
 			this.lblTicket.Text = (t+1).ToString();
@@ -47,12 +49,12 @@ namespace PV_Autolavado
 			MessageBox.Show("Aqui va un menu de Opciones \n En caso de existir");
 		}
 		
-		/*private void guradarTicket(){
+		private void guradarTicket(){
 			
 			ticket t = new ticket();
 			
-		public List<detalle_ticket> desglose;
-			
+			t.desglose = new List<detalle_ticket>();
+
 			t.id_usuario = 1;
 			t.id_lavador = 1;
 			t.propietario = lblPropietario.Text;
@@ -66,20 +68,21 @@ namespace PV_Autolavado
 			
 			
 			for(int i=0; i<=this.dgvVentas.Rows.Count; i++){
-				public int id_detalle;
+				/*public int id_detalle;
 		public int id_ticket;
 		public int id_servicio;
 		public int promocion;
-				 ahorro
+				 ahorro*/
 				
 				
 			}
 			
 		}
 		
-		private void reiniciaPantalla(){
-			
-		}*/
-
+		
+		void ContadorRelojTick(object sender, EventArgs e)
+		{
+			this.Text = DateTime.Now.ToLongDateString() + "-" + DateTime.Now.ToLongTimeString();			
+		}
 	}
 }

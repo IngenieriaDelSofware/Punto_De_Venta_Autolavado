@@ -20,7 +20,7 @@ namespace PV_Autolavado.Entidates
 		public string modelo;
 		public int color;
 		public double total;
-		public DateTime hora;
+		public TimeSpan hora;
 		public DateTime fecha;
 		public List<detalle_ticket> desglose;
 		
