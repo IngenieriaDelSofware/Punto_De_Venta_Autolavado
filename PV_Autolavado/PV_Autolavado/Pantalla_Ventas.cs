@@ -61,7 +61,7 @@ namespace PV_Autolavado
 			t.placas = lblPlacas.Text;
 			t.marca = lblMarca.Text;
 			t.modelo = lblModelo.Text;
-			t.color = 1;
+			t.color = "rojo";
 			t.total = Double.Parse(ptxtTotal.Text);
 			t.hora = DateTime.Today.TimeOfDay;
 			t.fecha = DateTime.Today.Date;
@@ -83,6 +83,20 @@ namespace PV_Autolavado
 		void ContadorRelojTick(object sender, EventArgs e)
 		{
 			this.Text = DateTime.Now.ToLongDateString() + "-" + DateTime.Now.ToLongTimeString();			
+		}
+		
+		void BtnNuevoCobroClick(object sender, EventArgs e)
+		{
+			NvoCobro vnt = new NvoCobro();
+			DialogResult res = vnt.ShowDialog();
+			
+			if(res == DialogResult.OK){
+				this.lblPropietario.Text = vnt.t.propietario;
+				this.lblModelo.Text = vnt.t.modelo;
+				this.lblMarca.Text = vnt.t.marca;
+				this.lblColor.Text = vnt.t.color;
+				this.lblPlacas.Text = vnt.t.placas;
+			}
 		}
 	}
 }

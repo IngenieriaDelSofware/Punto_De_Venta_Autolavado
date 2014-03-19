@@ -40,7 +40,8 @@
 			this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ahorro = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.gbDatos = new System.Windows.Forms.GroupBox();
+			this.lblColor = new System.Windows.Forms.Label();
 			this.lblMarca = new System.Windows.Forms.Label();
 			this.lblPropietario = new System.Windows.Forms.Label();
 			this.lblModelo = new System.Windows.Forms.Label();
@@ -53,7 +54,7 @@
 			this.contadorReloj = new System.Windows.Forms.Timer(this.components);
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
-			this.groupBox2.SuspendLayout();
+			this.gbDatos.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// btnAgregarServicio
@@ -157,20 +158,29 @@
 			this.Total.Name = "Total";
 			this.Total.ReadOnly = true;
 			// 
-			// groupBox2
+			// gbDatos
 			// 
-			this.groupBox2.Controls.Add(this.lblMarca);
-			this.groupBox2.Controls.Add(this.lblPropietario);
-			this.groupBox2.Controls.Add(this.lblModelo);
-			this.groupBox2.Controls.Add(this.lblPlacas);
-			this.groupBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-			this.groupBox2.Location = new System.Drawing.Point(449, 12);
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(423, 124);
-			this.groupBox2.TabIndex = 17;
-			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "Datos del Vehiculo";
+			this.gbDatos.Controls.Add(this.lblColor);
+			this.gbDatos.Controls.Add(this.lblMarca);
+			this.gbDatos.Controls.Add(this.lblPropietario);
+			this.gbDatos.Controls.Add(this.lblModelo);
+			this.gbDatos.Controls.Add(this.lblPlacas);
+			this.gbDatos.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.gbDatos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+			this.gbDatos.Location = new System.Drawing.Point(449, 12);
+			this.gbDatos.Name = "gbDatos";
+			this.gbDatos.Size = new System.Drawing.Size(423, 124);
+			this.gbDatos.TabIndex = 17;
+			this.gbDatos.TabStop = false;
+			this.gbDatos.Text = "Datos del Vehiculo";
+			// 
+			// lblColor
+			// 
+			this.lblColor.Location = new System.Drawing.Point(316, 27);
+			this.lblColor.Name = "lblColor";
+			this.lblColor.Size = new System.Drawing.Size(100, 23);
+			this.lblColor.TabIndex = 6;
+			this.lblColor.Text = "Color";
 			// 
 			// lblMarca
 			// 
@@ -258,6 +268,7 @@
 			this.btnNuevoCobro.TabIndex = 21;
 			this.btnNuevoCobro.Text = "Nuevo Cobro";
 			this.btnNuevoCobro.UseVisualStyleBackColor = true;
+			this.btnNuevoCobro.Click += new System.EventHandler(this.BtnNuevoCobroClick);
 			// 
 			// contadorReloj
 			// 
@@ -275,7 +286,7 @@
 			this.Controls.Add(this.lblUsuario);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.groupBox2);
+			this.Controls.Add(this.gbDatos);
 			this.Controls.Add(this.lblTicket);
 			this.Controls.Add(this.dgvVentas);
 			this.Controls.Add(this.groupBox1);
@@ -287,9 +298,10 @@
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
-			this.groupBox2.ResumeLayout(false);
+			this.gbDatos.ResumeLayout(false);
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.Label lblColor;
 		private System.Windows.Forms.Timer contadorReloj;
 		private System.Windows.Forms.Button btnNuevoCobro;
 		private System.Windows.Forms.Label lblUsuario;
@@ -303,7 +315,7 @@
 		private System.Windows.Forms.Label lblPropietario;
 		private System.Windows.Forms.Label lblTicket;
 		private System.Windows.Forms.Label lblMarca;
-		private System.Windows.Forms.GroupBox groupBox2;
+		private System.Windows.Forms.GroupBox gbDatos;
 		private PV_Autolavado.PriceTextBox ptxtTotal;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Costo;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;

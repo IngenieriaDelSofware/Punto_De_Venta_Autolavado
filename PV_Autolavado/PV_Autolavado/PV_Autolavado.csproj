@@ -54,6 +54,10 @@
     <Compile Include="Entidates\detalle_ticket.cs" />
     <Compile Include="Entidates\ticket.cs" />
     <Compile Include="Entidates\usuario.cs" />
+    <Compile Include="NvoCobro.cs" />
+    <Compile Include="NvoCobro.Designer.cs">
+      <DependentUpon>NvoCobro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pantalla_Ventas.cs" />
     <Compile Include="Pantalla_Ventas.Designer.cs">
       <DependentUpon>Pantalla_Ventas.cs</DependentUpon>
@@ -63,6 +67,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="NvoCobro.resx">
+      <DependentUpon>NvoCobro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantalla_Ventas.resx">
       <DependentUpon>Pantalla_Ventas.cs</DependentUpon>
     </EmbeddedResource>

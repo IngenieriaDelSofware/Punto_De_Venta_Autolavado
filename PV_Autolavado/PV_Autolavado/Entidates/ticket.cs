@@ -18,7 +18,7 @@ namespace PV_Autolavado.Entidates
 		public string placas;
 		public string marca;
 		public string modelo;
-		public int color;
+		public string color;
 		public double total;
 		public TimeSpan hora;
 		public DateTime fecha;
