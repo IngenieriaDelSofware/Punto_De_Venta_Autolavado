@@ -9,7 +9,7 @@ namespace PV_Autolavado
 
 	public partial class Pantalla_Ventas : Form
 	{
-		public int n=1;
+		private int n=1;
 		private query query;
 		
 		public Pantalla_Ventas()
@@ -29,26 +29,28 @@ namespace PV_Autolavado
 		
 		void BtnAgregarServicioClick(object sender, EventArgs e)
 		{
+			if(this.validarCampos()){
+				MessageBox.Show("Necesita agregar una nueva venta");
+			}
+			else{
 			dgvVentas.Rows.Add(n, "Servicio 1", "$ 10.00", "$ 1.60", "$ 11.60");
 
 			this.ptxtTotal.Sumar(11.60);
 			n++;
+			}
 		}
 		
 		void BtnTotalClick(object sender, EventArgs e)
 		{
-			MessageBox.Show("Usted debe un total de: \n" + this.ptxtTotal.Text + "\n Ahorro un putero");
-			n=1;
-			this.dgvVentas.RowCount = 1;
+			if(dgvVentas.Rows.Count == 1){
+				MessageBox.Show("Necesita agregar servicios");
+			}
+			else{
+			MessageBox.Show("Usted debe un total de: \n" + this.ptxtTotal.Text + "\n Ahorro un putero");	
+			this.reinciarPantalla();
+			}
+		}
 
-			this.ptxtTotal.Default();
-		}
-		
-		void BtnOpcionesClick(object sender, EventArgs e)
-		{
-			MessageBox.Show("Aqui va un menu de Opciones \n En caso de existir");
-		}
-		
 		private void guradarTicket(){
 			
 			ticket t = new ticket();
@@ -87,16 +89,63 @@ namespace PV_Autolavado
 		
 		void BtnNuevoCobroClick(object sender, EventArgs e)
 		{
-			NvoCobro vnt = new NvoCobro();
-			DialogResult res = vnt.ShowDialog();
-			
-			if(res == DialogResult.OK){
-				this.lblPropietario.Text = vnt.t.propietario;
-				this.lblModelo.Text = vnt.t.modelo;
-				this.lblMarca.Text = vnt.t.marca;
-				this.lblColor.Text = vnt.t.color;
-				this.lblPlacas.Text = vnt.t.placas;
+			if(validarCampos()){
+				NvoCobro vnt = new NvoCobro();
+				DialogResult res = vnt.ShowDialog();
+				
+				if(res == DialogResult.OK){
+					this.lblPropietario.Text = vnt.t.propietario;
+					this.lblModelo.Text = vnt.t.modelo;
+					this.lblMarca.Text = vnt.t.marca;
+					this.lblColor.Text = vnt.t.color;
+					this.lblPlacas.Text = vnt.t.placas;
+				}
+				
+				vnt.Dispose();
 			}
+			else{
+				MessageBox.Show("Debe finalizar el cobro actual primero");
+			}
+		}
+		
+		private void reinciarPantalla(){
+			this.ptxtTotal.Default();
+			
+			this.lblPropietario.Text = "Propietario";
+			this.lblModelo.Text = "Modelo";
+			this.lblMarca.Text = "Marca";
+			this.lblColor.Text = "Color";
+			this.lblPlacas.Text = "Placas";
+			
+			this.lblTicket.Text = "5";
+			
+			n=1;
+			this.dgvVentas.RowCount = 1;
+		}
+		
+		private Boolean validarCampos(){
+			Boolean val = false;
+				
+				if (lblPropietario.Text == "Propietario"){
+				val = true;
+				}
+					if (lblPlacas.Text == "Placas"){
+						val = true;
+					}
+				
+						if (lblColor.Text == "Color"){
+							val = true;
+						}
+				
+					if (lblMarca.Text == "Marca"){
+						val = true;
+					}
+				
+				if (lblModelo.Text == "Modelo"){
+					val = true;
+				}
+
+			return val;
 		}
 	}
 }
