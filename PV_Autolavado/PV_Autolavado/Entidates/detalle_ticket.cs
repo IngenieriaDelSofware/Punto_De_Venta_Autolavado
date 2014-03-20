@@ -12,7 +12,7 @@ namespace PV_Autolavado.Entidates
 		public int id_detalle;
 		public int id_ticket;
 		public int id_servicio;
-		public int promocion;
+		public bool promocion;
 		public double ahorro;
 
 	}

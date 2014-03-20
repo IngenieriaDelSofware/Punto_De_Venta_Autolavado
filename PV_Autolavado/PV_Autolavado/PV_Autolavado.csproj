@@ -32,7 +32,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data" />
-    <Reference Include="MySql.Data.Entity" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -54,15 +53,21 @@
     <Compile Include="Entidates\detalle_ticket.cs" />
     <Compile Include="Entidates\ticket.cs" />
     <Compile Include="Entidates\usuario.cs" />
-    <Compile Include="NvoCobro.cs" />
+    <Compile Include="NvoCobro.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="NvoCobro.Designer.cs">
       <DependentUpon>NvoCobro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantalla_Ventas.cs" />
+    <Compile Include="Objetos\PriceTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Pantalla_Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Pantalla_Ventas.Designer.cs">
       <DependentUpon>Pantalla_Ventas.cs</DependentUpon>
     </Compile>
-    <Compile Include="PriceTextBox.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -74,9 +79,6 @@
       <DependentUpon>Pantalla_Ventas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Conexion" />
-    <Folder Include="Entidates" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

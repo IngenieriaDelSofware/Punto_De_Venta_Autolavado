@@ -19,21 +19,21 @@ namespace PV_Autolavado
 				" (`id_usuario`,`id_lavador`,`propietario`,`placas`,`marca`,`modelo`,`color`,`total`,`hora`,`fecha`) " + 
 				" VALUES (" +
 				nota.id_usuario + "," +
-				nota.id_lavador + "," +
-				nota.propietario + "," +
-				nota.placas + "," +
-				nota.marca + "," +
-				nota.modelo + "," +
-				nota.color + "," +
-				nota.total + "," +
-				nota.hora + "," +
-				nota.fecha + ");");
+				nota.id_lavador + ",'" +
+				nota.propietario + "','" +
+				nota.placas + "','" +
+				nota.marca + "','" +
+				nota.modelo + "','" +
+				nota.color + "'," +
+				nota.total + ",'" +
+				nota.hora + "','" +
+				nota.fecha + "');");
 			
 			this.ejecutarQuery(sql);
 			
-			for (int i=0; i<=nota.desglose.Count; i++){
+			for (int i=0; i<=nota.desglose.Count-1; i++){
 				
-			sql = ("INSERT INTO `punto_venta_autolavado`.`detalle_ticket`(`id_ticket`,`id_servicio`,`id_tamano`,`promocion`)" + 
+			sql = ("INSERT INTO `punto_venta_autolavado`.`detalle_ticket`(`id_ticket`,`id_servicio`,`promocion`, `ahorro`)" + 
 						"VALUES (" +
 						nota.desglose[i].id_ticket + "," +
 						nota.desglose[i].id_servicio + "," +

@@ -4,6 +4,7 @@
  
 using System;
 using System.Collections.Generic;
+using MySql.Data.Types;
 
 namespace PV_Autolavado.Entidates
 {
@@ -20,9 +21,8 @@ namespace PV_Autolavado.Entidates
 		public string modelo;
 		public string color;
 		public double total;
-		public TimeSpan hora;
-		public DateTime fecha;
+		public string hora;
+		public string fecha;
 		public List<detalle_ticket> desglose;
-		
 	}
 }

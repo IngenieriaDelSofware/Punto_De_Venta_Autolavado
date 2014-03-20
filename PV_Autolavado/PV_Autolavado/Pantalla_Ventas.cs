@@ -33,7 +33,7 @@ namespace PV_Autolavado
 				MessageBox.Show("Necesita agregar una nueva venta");
 			}
 			else{
-			dgvVentas.Rows.Add(n, "Servicio 1", "$ 10.00", "$ 1.60", "$ 11.60");
+			dgvVentas.Rows.Add(n, "12345", "Servicio 1", "10.00", "1.60", "11.60");
 
 			this.ptxtTotal.Sumar(11.60);
 			n++;
@@ -46,13 +46,14 @@ namespace PV_Autolavado
 				MessageBox.Show("Necesita agregar servicios");
 			}
 			else{
-			MessageBox.Show("Usted debe un total de: \n" + this.ptxtTotal.Text + "\n Ahorro un putero");	
-			this.reinciarPantalla();
+				MessageBox.Show("Usted debe un total de: \n" + this.ptxtTotal.Text + "\n Ahorro un putero");
+				this.guardarTicket();
+				this.reinciarPantalla();
 			}
 		}
 
-		private void guradarTicket(){
-			
+		private void guardarTicket(){
+
 			ticket t = new ticket();
 			
 			t.desglose = new List<detalle_ticket>();
@@ -63,22 +64,28 @@ namespace PV_Autolavado
 			t.placas = lblPlacas.Text;
 			t.marca = lblMarca.Text;
 			t.modelo = lblModelo.Text;
-			t.color = "rojo";
-			t.total = Double.Parse(ptxtTotal.Text);
-			t.hora = DateTime.Today.TimeOfDay;
-			t.fecha = DateTime.Today.Date;
+			t.color = lblColor.Text;
+			t.total = ptxtTotal.Cantidad;
+			t.hora = DateTime.Now.TimeOfDay.ToString();
+			t.fecha = DateTime.Now.Date.ToShortDateString();
 			
-			
-			for(int i=0; i<=this.dgvVentas.Rows.Count; i++){
-				/*public int id_detalle;
-		public int id_ticket;
-		public int id_servicio;
-		public int promocion;
-				 ahorro*/
+			foreach (DataGridViewRow fila in dgvVentas.Rows){
+				detalle_ticket dt = new detalle_ticket();
 				
+				dt.id_ticket = int.Parse(this.lblTicket.Text);
+				dt.id_servicio = 1;/*int.Parse(fila.Cells[1].Value.ToString()) Linea Real*/;
+				dt.promocion = true;
+				dt.ahorro = double.Parse(fila.Cells[4].Value.ToString());
 				
+				t.desglose.Add(dt);
 			}
+
+			this.label3.Text = t.hora;
+			this.label4.Text = t.fecha;
 			
+			query = new query();
+			query.guardarTicket(t);
+
 		}
 		
 		
@@ -117,10 +124,12 @@ namespace PV_Autolavado
 			this.lblColor.Text = "Color";
 			this.lblPlacas.Text = "Placas";
 			
-			this.lblTicket.Text = "5";
-			
 			n=1;
-			this.dgvVentas.RowCount = 1;
+			this.dgvVentas.RowCount = 0;
+			
+			
+			this.lblTicket.Text = (new query().ultimoRegistro("ticket", "id_ticket") + 1).ToString();
+			
 		}
 		
 		private Boolean validarCampos(){

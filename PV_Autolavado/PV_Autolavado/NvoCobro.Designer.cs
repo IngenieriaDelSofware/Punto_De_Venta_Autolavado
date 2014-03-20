@@ -55,7 +55,7 @@ namespace PV_Autolavado
 			this.txtPropietario.Location = new System.Drawing.Point(12, 38);
 			this.txtPropietario.Name = "txtPropietario";
 			this.txtPropietario.Size = new System.Drawing.Size(253, 20);
-			this.txtPropietario.TabIndex = 0;
+			this.txtPropietario.TabIndex = 1;
 			// 
 			// lblPropietario
 			// 
@@ -82,7 +82,7 @@ namespace PV_Autolavado
 			this.txtPlacas.Location = new System.Drawing.Point(13, 92);
 			this.txtPlacas.Name = "txtPlacas";
 			this.txtPlacas.Size = new System.Drawing.Size(100, 20);
-			this.txtPlacas.TabIndex = 3;
+			this.txtPlacas.TabIndex = 2;
 			// 
 			// lblMarca
 			// 
@@ -99,7 +99,7 @@ namespace PV_Autolavado
 			this.txtMarca.Location = new System.Drawing.Point(13, 146);
 			this.txtMarca.Name = "txtMarca";
 			this.txtMarca.Size = new System.Drawing.Size(100, 20);
-			this.txtMarca.TabIndex = 5;
+			this.txtMarca.TabIndex = 3;
 			// 
 			// lblModelo
 			// 
@@ -116,7 +116,7 @@ namespace PV_Autolavado
 			this.txtModelo.Location = new System.Drawing.Point(13, 200);
 			this.txtModelo.Name = "txtModelo";
 			this.txtModelo.Size = new System.Drawing.Size(100, 20);
-			this.txtModelo.TabIndex = 0;
+			this.txtModelo.TabIndex = 4;
 			// 
 			// lblColor
 			// 
@@ -133,14 +133,14 @@ namespace PV_Autolavado
 			this.txtColor.Location = new System.Drawing.Point(120, 91);
 			this.txtColor.Name = "txtColor";
 			this.txtColor.Size = new System.Drawing.Size(100, 20);
-			this.txtColor.TabIndex = 7;
+			this.txtColor.TabIndex = 5;
 			// 
 			// btnCancelar
 			// 
 			this.btnCancelar.Location = new System.Drawing.Point(140, 196);
 			this.btnCancelar.Name = "btnCancelar";
 			this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-			this.btnCancelar.TabIndex = 8;
+			this.btnCancelar.TabIndex = 7;
 			this.btnCancelar.Text = "Cancelar";
 			this.btnCancelar.UseVisualStyleBackColor = true;
 			this.btnCancelar.Click += new System.EventHandler(this.BtnCancelarClick);
@@ -151,7 +151,7 @@ namespace PV_Autolavado
 			this.btnAceptar.Location = new System.Drawing.Point(222, 196);
 			this.btnAceptar.Name = "btnAceptar";
 			this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-			this.btnAceptar.TabIndex = 9;
+			this.btnAceptar.TabIndex = 6;
 			this.btnAceptar.Text = "Aceptar";
 			this.btnAceptar.UseVisualStyleBackColor = true;
 			this.btnAceptar.Click += new System.EventHandler(this.BtnAceptarClick);
