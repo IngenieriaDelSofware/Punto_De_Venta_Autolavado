@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 using PV_Autolavado.Entidates;
+using System.Windows.Forms;
 
 namespace PV_Autolavado
 {
@@ -12,6 +13,24 @@ namespace PV_Autolavado
 		private MySqlCommand comando;
 		
 		
+		public void nuevoUsuario(usuario user){
+			
+			this.conectarMySQL();
+			string sql = ("INSERT INTO `punto_venta_autolavado`.`usuarios`" +
+				" (`nom usu`, `contraseña`, `nombre`,`paterno`,`materno`,`fec nacimiento`,`fec ingreso`,`puesto`) " + 
+				" VALUES (" +
+				user.nom_usu + "," +
+				user.contraseña + ",'" +
+				user.nombre + "','" +
+				user.paterno + "','" +
+				user.materno + "','" +
+				user.fec_nacimiento + "','" +
+				user.fec_ingreso + "'," +
+				user.puesto + "');");
+
+			this.ejecutarQuery(sql);
+			this.desconectarMySQL();
+		}
 		public void guardarTicket(ticket nota){
 			
 			this.conectarMySQL();
@@ -50,7 +69,7 @@ namespace PV_Autolavado
 			
 			this.conectarMySQL();
 			
-			String cadena = "select max(" + columna + ") as max from " + tabla + "";
+			string cadena = "select max(" + columna + ") as max from " + tabla + "";
 			comando = new MySqlCommand(cadena, conexion);
 			scanner = comando.ExecuteReader();
 			int max = 0;
@@ -67,6 +86,61 @@ namespace PV_Autolavado
 			
 			return max;
 			
+		}
+		
+		public usuario obtenerUsuario(string user){
+			this.conectarMySQL();
+			usuario usuario = new usuario();
+			
+			string cadena = "SELECT * FROM usuarios WHERE nomusu = '" + user + "';";
+			comando = new MySqlCommand(cadena, conexion);
+			scanner = comando.ExecuteReader();
+			
+			while(scanner.Read()){
+				usuario.nom_usu = scanner["nomusu"].ToString();
+				usuario.puesto = scanner["puesto"].ToString();
+			}
+			
+			scanner.Close();
+			scanner = null;
+			comando.Dispose();
+			comando = null;
+			this.desconectarMySQL();
+			
+			return usuario;
+			
+		}
+		
+		public Boolean validarUsuario(string user, string pass){
+			bool val = false;
+			string usuario = null;
+			
+				this.conectarMySQL();
+				string cadena = ("SELECT nomusu FROM usuarios WHERE contraseña = '" + pass +"'");
+				
+				
+				comando = new MySqlCommand(cadena, conexion);
+				scanner = comando.ExecuteReader();
+				
+				while(scanner.Read()){
+					usuario = scanner["nomusu"].ToString();
+					MessageBox.Show("Bienvenido \n" + usuario);
+					
+				}
+				
+				scanner.Close();
+				scanner = null;
+				comando.Dispose();
+				comando = null;
+				this.desconectarMySQL();
+				
+				if(usuario == user){
+					val = true;
+				}
+				
+				else val = false;
+			
+			return val;
 		}
 		
 		private string queryId(string id){
