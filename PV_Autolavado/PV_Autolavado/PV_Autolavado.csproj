@@ -67,12 +67,14 @@
     <Compile Include="Conexion\mysql.cs" />
     <Compile Include="Conexion\query.cs" />
     <Compile Include="Entidates\detalle_ticket.cs" />
+    <Compile Include="Entidates\Servicio.cs" />
     <Compile Include="Entidates\ticket.cs" />
     <Compile Include="Entidates\usuario.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Objetos\BotonServicio.cs" />
     <Compile Include="Objetos\PriceTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -89,6 +91,10 @@
     </Compile>
     <Compile Include="Ventas %28Frias%29\Pantalla_Ventas.Designer.cs">
       <DependentUpon>Pantalla_Ventas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas %28Frias%29\Ventana_Productos.cs" />
+    <Compile Include="Ventas %28Frias%29\Ventana_Productos.Designer.cs">
+      <DependentUpon>Ventana_Productos.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas %28Frias%29\Pantalla_Ventas.resx">
       <DependentUpon>Pantalla_Ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas %28Frias%29\Ventana_Productos.resx">
+      <DependentUpon>Ventana_Productos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -9,8 +9,9 @@ namespace PV_Autolavado
 
 	public partial class Pantalla_Ventas : Form
 	{
-		private int n=1;
 		private query query;
+		private int n=1;
+		private double ahrr=0;
 		
 		public Pantalla_Ventas()
 		{
@@ -33,20 +34,21 @@ namespace PV_Autolavado
 				MessageBox.Show("Necesita agregar una nueva venta");
 			}
 			else{
-			dgvVentas.Rows.Add(n, "12345", "Servicio 1", "10.00", "1.60", "11.60");
-
-			this.ptxtTotal.Sumar(11.60);
-			n++;
+				new Ventana_Productos(this).ShowDialog();
 			}
 		}
 		
 		void BtnTotalClick(object sender, EventArgs e)
 		{
-			if(dgvVentas.Rows.Count == 1){
+			if(dgvVentas.Rows.Count == 0){
 				MessageBox.Show("Necesita agregar servicios");
 			}
 			else{
-				MessageBox.Show("Usted debe un total de: \n" + this.ptxtTotal.Text + "\n Ahorro un putero");
+				MessageBox.Show(
+					"Usted debe un total de: \n" + 
+					this.ptxtTotal.Text + "\n Usted Ahorro: " + 
+					this.ahrr.ToString());
+				
 				this.guardarTicket();
 				this.reinciarPantalla();
 			}
@@ -80,9 +82,6 @@ namespace PV_Autolavado
 				t.desglose.Add(dt);
 			}
 
-			this.label3.Text = t.hora;
-			this.label4.Text = t.fecha;
-			
 			query = new query();
 			query.guardarTicket(t);
 
@@ -124,9 +123,8 @@ namespace PV_Autolavado
 			this.lblColor.Text = "Color";
 			this.lblPlacas.Text = "Placas";
 			
-			n=1;
 			this.dgvVentas.RowCount = 0;
-			
+			this.n = 1;
 			
 			this.lblTicket.Text = (new query().ultimoRegistro("ticket", "id_ticket") + 1).ToString();
 			
@@ -155,6 +153,21 @@ namespace PV_Autolavado
 				}
 
 			return val;
+		}
+		
+		public void agregarFilas(Servicio servicio){
+			this.dgvVentas.Rows.Add(
+				n,/*no Producto*/ 
+				servicio.idservicio.ToString(), /*Codigo*/
+				servicio.descripcion, /*descripcion*/
+				servicio.costo.ToString(),
+				-1.30,
+				(servicio.costo - 1.30));/*Costo*/
+				
+			
+			this.ptxtTotal.Sumar(servicio.costo - 1.30);
+			this.ahrr = ahrr + (-1.30);
+			n++;
 		}
 	}
 }

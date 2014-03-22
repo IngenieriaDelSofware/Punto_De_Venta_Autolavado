@@ -52,8 +52,6 @@
 			this.lblUsuario = new System.Windows.Forms.Label();
 			this.btnNuevoCobro = new System.Windows.Forms.Button();
 			this.contadorReloj = new System.Windows.Forms.Timer(this.components);
-			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
 			this.gbDatos.SuspendLayout();
@@ -279,30 +277,12 @@
 			this.contadorReloj.Interval = 1000;
 			this.contadorReloj.Tick += new System.EventHandler(this.ContadorRelojTick);
 			// 
-			// label3
-			// 
-			this.label3.Location = new System.Drawing.Point(213, 592);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(100, 23);
-			this.label3.TabIndex = 23;
-			this.label3.Text = "label3";
-			// 
-			// label4
-			// 
-			this.label4.Location = new System.Drawing.Point(44, 637);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(100, 23);
-			this.label4.TabIndex = 24;
-			this.label4.Text = "label4";
-			// 
 			// Pantalla_Ventas
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(884, 691);
-			this.Controls.Add(this.label4);
-			this.Controls.Add(this.label3);
 			this.Controls.Add(this.btnNuevoCobro);
 			this.Controls.Add(this.lblUsuario);
 			this.Controls.Add(this.label2);
@@ -322,8 +302,6 @@
 			this.gbDatos.ResumeLayout(false);
 			this.ResumeLayout(false);
 		}
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label lblColor;
 		private System.Windows.Forms.Timer contadorReloj;
 		private System.Windows.Forms.Button btnNuevoCobro;
