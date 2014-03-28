@@ -12,7 +12,7 @@ namespace PV_Autolavado
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Pantalla_Ventas());
+			Application.Run(new Login());
 		}
 		
 	}

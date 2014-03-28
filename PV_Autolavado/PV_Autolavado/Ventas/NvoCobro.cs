@@ -7,7 +7,7 @@ namespace PV_Autolavado
 {
 	public partial class NvoCobro : Form
 	{
-		public ticket t;
+		public Ticket t;
 		
 		public NvoCobro()
 		{
@@ -22,7 +22,7 @@ namespace PV_Autolavado
 		
 		void BtnAceptarClick(object sender, EventArgs e)
 		{
-			t = new ticket();
+			t = new Ticket();
 			
 			t.propietario = this.txtPropietario.Text;
 			t.placas = this.txtPlacas.Text;

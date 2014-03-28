@@ -9,7 +9,7 @@ using MySql.Data.Types;
 namespace PV_Autolavado.Entidates
 {
 
-	public class ticket
+	public class Ticket
 	{
 		
 		public int id_ticket;
@@ -23,6 +23,6 @@ namespace PV_Autolavado.Entidates
 		public double total;
 		public string hora;
 		public string fecha;
-		public List<detalle_ticket> desglose;
+		public List<Detalle_ticket> desglose;
 	}
 }

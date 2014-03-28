@@ -116,8 +116,10 @@
 									this.ahorro,
 									this.Total});
 			this.dgvVentas.Location = new System.Drawing.Point(12, 155);
+			this.dgvVentas.MultiSelect = false;
 			this.dgvVentas.Name = "dgvVentas";
 			this.dgvVentas.ReadOnly = true;
+			this.dgvVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvVentas.Size = new System.Drawing.Size(860, 415);
 			this.dgvVentas.TabIndex = 0;
 			// 

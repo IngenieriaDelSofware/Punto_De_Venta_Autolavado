@@ -42,15 +42,15 @@ namespace PV_Autolavado
 		public void validarLogin(){
 			
 			if(new query().validarUsuario(this.txtUser.Text, this.txtPass.Text)){
-				usuario user  = new query().obtenerUsuario(this.txtUser.Text);
+				Empleado user  = new query().obtenerUsuario(this.txtUser.Text);
 				
-				if(user.puesto == "sys_admin"){
-					new menu().Show();
+				if(user.puesto == 1){
+					new MenuAdministrador(user.nom_usu).Show();
 					this.Hide();
 				}
 				
-				if(user.puesto == "cajero"){
-					new Pantalla_Ventas().Show();
+				if(user.puesto == 2){
+					new Pantalla_Ventas(user.nom_usu).Show();
 					this.Hide();
 				}
 			}

@@ -13,7 +13,7 @@ namespace PV_Autolavado
 		private MySqlCommand comando;
 		
 		
-		public void nuevoUsuario(usuario user){
+		public void nuevoUsuario(Empleado user){
 			
 			this.conectarMySQL();
 			string sql = ("INSERT INTO `punto_venta_autolavado`.`usuarios`" +
@@ -32,17 +32,17 @@ namespace PV_Autolavado
 			this.desconectarMySQL();
 		}
 		
-		public usuario obtenerUsuario(string user){
+		public Empleado obtenerUsuario(string user){
 			this.conectarMySQL();
-			usuario usuario = new usuario();
+			Empleado usuario = new Empleado();
 			
-			string cadena = "SELECT * FROM usuarios WHERE nomusu = '" + user + "';";
+			string cadena = "SELECT * FROM empleados WHERE nomusu = '" + user + "';";
 			comando = new MySqlCommand(cadena, conexion);
 			scanner = comando.ExecuteReader();
 			
 			while(scanner.Read()){
 				usuario.nom_usu = scanner["nomusu"].ToString();
-				usuario.puesto = scanner["puesto"].ToString();
+				usuario.puesto = int.Parse(scanner["puesto"].ToString());
 			}
 			
 			scanner.Close();
@@ -60,7 +60,7 @@ namespace PV_Autolavado
 			string usuario = null;
 			
 				this.conectarMySQL();
-				string cadena = ("SELECT nomusu FROM usuarios WHERE contraseña = '" + pass +"'");
+				string cadena = ("SELECT nomusu FROM empleados WHERE contraseña = '" + pass +"'");
 				
 				
 				comando = new MySqlCommand(cadena, conexion);
@@ -68,7 +68,6 @@ namespace PV_Autolavado
 				
 				while(scanner.Read()){
 					usuario = scanner["nomusu"].ToString();
-					MessageBox.Show("Bienvenido \n" + usuario);
 					
 				}
 				
@@ -87,7 +86,7 @@ namespace PV_Autolavado
 			return val;
 		}
 		
-		public void guardarTicket(ticket nota){
+		public void guardarTicket(Ticket nota){
 			
 			this.conectarMySQL();
 			string sql = ("INSERT INTO `punto_venta_autolavado`.`ticket`" +
@@ -170,9 +169,48 @@ namespace PV_Autolavado
 			return max;
 			
 		}
-		
-		private string queryId(string id){
-			return "SELECT * from tabla1 where id='" + id + "'";
+
+        public List<Empleado> obtenerListaEmpleados()
+        {
+            List<Empleado> lista = new List<Empleado>();
+            this.conectarMySQL();
+
+            comando = new MySqlCommand(this.querySelect("empleados"), conexion);
+            scanner = comando.ExecuteReader();
+
+            while (scanner.Read())
+            {
+                Empleado emp = new Empleado();
+
+                    emp.id = int.Parse(scanner["id"].ToString());
+                    emp.nom_usu = scanner["nomusu"].ToString();
+                    emp.contraseña = scanner["contraseña"].ToString();
+                    emp.curp = scanner["curp"].ToString();
+		            emp.nombre = scanner["nombre"].ToString();
+		            emp.paterno = scanner["paterno"].ToString();
+		            emp.materno = scanner["materno"].ToString();
+		            emp.fec_nacimiento = scanner["fec nacimiento"].ToString();
+                    emp.direccion = scanner["direccion"].ToString();
+                    emp.colonia = scanner["colonia"].ToString();
+                    emp.municipio = scanner["municipio"].ToString();
+                    emp.estado = scanner["estado"].ToString(); 
+		            emp.fec_ingreso = scanner["fec ingreso"].ToString();
+		            emp.puesto = int.Parse(scanner["puesto"].ToString());
+               
+
+                lista.Add(emp);
+            }
+
+            this.desconectarMySQL();
+            scanner.Close();
+            scanner = null;
+            comando.Dispose();
+            comando = null;
+
+            return lista;
+        }
+		private string queryId(string id, String tabla){
+			return "SELECT * from " + tabla +" where id='" + id + "'";
 		}
 		
 		private string querySelect(string tabla){

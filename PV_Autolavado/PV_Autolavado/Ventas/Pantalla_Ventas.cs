@@ -13,9 +13,10 @@ namespace PV_Autolavado
 		private int n=1;
 		private double ahrr=0;
 		
-		public Pantalla_Ventas()
+		public Pantalla_Ventas(String user)
 		{
 			InitializeComponent();
+            this.lblUsuario.Text = user;
 		}
 		
 		void Pantalla_VentasLoad(object sender, EventArgs e)
@@ -56,9 +57,9 @@ namespace PV_Autolavado
 
 		private void guardarTicket(){
 
-			ticket t = new ticket();
+			Ticket t = new Ticket();
 			
-			t.desglose = new List<detalle_ticket>();
+			t.desglose = new List<Detalle_ticket>();
 
 			t.id_usuario = 1;
 			t.id_lavador = 1;
@@ -72,7 +73,7 @@ namespace PV_Autolavado
 			t.fecha = DateTime.Now.Date.ToShortDateString();
 			
 			foreach (DataGridViewRow fila in dgvVentas.Rows){
-				detalle_ticket dt = new detalle_ticket();
+				Detalle_ticket dt = new Detalle_ticket();
 				
 				dt.id_ticket = int.Parse(this.lblTicket.Text);
 				dt.id_servicio = 1;/*int.Parse(fila.Cells[1].Value.ToString()) Linea Real*/;

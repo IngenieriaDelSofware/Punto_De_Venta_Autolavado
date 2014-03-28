@@ -48,84 +48,126 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrador%28Rica%29\EliminarUsuario.cs" />
-    <Compile Include="Administrador%28Rica%29\EliminarUsuario.Designer.cs">
-      <DependentUpon>EliminarUsuario.cs</DependentUpon>
+    <Compile Include="Administrador\MenuAdmin.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administrador%28Rica%29\menu.cs" />
-    <Compile Include="Administrador%28Rica%29\menu.Designer.cs">
-      <DependentUpon>menu.cs</DependentUpon>
+    <Compile Include="Administrador\MenuAdmin.Designer.cs">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administrador%28Rica%29\nuevo servicio.cs" />
-    <Compile Include="Administrador%28Rica%29\nuevo servicio.Designer.cs">
-      <DependentUpon>nuevo servicio.cs</DependentUpon>
+    <Compile Include="Administrador\Personal.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administrador%28Rica%29\NuevoUsuario.cs" />
-    <Compile Include="Administrador%28Rica%29\NuevoUsuario.Designer.cs">
-      <DependentUpon>NuevoUsuario.cs</DependentUpon>
+    <Compile Include="Administrador\Personal.Designer.cs">
+      <DependentUpon>Personal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Conexion\mysql.cs" />
-    <Compile Include="Conexion\query.cs" />
-    <Compile Include="Entidates\detalle_ticket.cs" />
+    <Compile Include="Origen Datos\mysql.cs" />
+    <Compile Include="Origen Datos\query.cs" />
+    <Compile Include="Entidates\Detalle_ticket.cs" />
     <Compile Include="Entidates\Servicio.cs" />
-    <Compile Include="Entidates\ticket.cs" />
-    <Compile Include="Entidates\usuario.cs" />
-    <Compile Include="Login.cs" />
+    <Compile Include="Entidates\Ticket.cs" />
+    <Compile Include="Entidates\Empleado.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Objetos\BotonServicio.cs" />
+    <Compile Include="Objetos\BotonServicio.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objetos\LabelTextField.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Objetos\PriceTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Personal\conexion.cs" />
+    <Compile Include="Personal\Datos.cs" />
+    <Compile Include="Personal\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personal\MainForm.designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\MostrarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personal\MostrarUsuario.designer.cs">
+      <DependentUpon>MostrarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\usuarioAg.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ventas %28Frias%29\NvoCobro.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\NvoCobro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventas %28Frias%29\NvoCobro.Designer.cs">
+    <Compile Include="Ventas\NvoCobro.Designer.cs">
       <DependentUpon>NvoCobro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventas %28Frias%29\Pantalla_Ventas.cs">
+    <Compile Include="Ventas\Pantalla_Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventas %28Frias%29\Pantalla_Ventas.Designer.cs">
+    <Compile Include="Ventas\Pantalla_Ventas.Designer.cs">
       <DependentUpon>Pantalla_Ventas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventas %28Frias%29\Ventana_Productos.cs" />
-    <Compile Include="Ventas %28Frias%29\Ventana_Productos.Designer.cs">
+    <Compile Include="Ventas\Ventana_Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Ventana_Productos.Designer.cs">
       <DependentUpon>Ventana_Productos.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Administrador%28Rica%29\EliminarUsuario.resx">
-      <DependentUpon>EliminarUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Administrador\MenuAdmin.resx">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Administrador%28Rica%29\menu.resx">
-      <DependentUpon>menu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Administrador%28Rica%29\nuevo servicio.resx">
-      <DependentUpon>nuevo servicio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Administrador%28Rica%29\NuevoUsuario.resx">
-      <DependentUpon>NuevoUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Administrador\Personal.resx">
+      <DependentUpon>Personal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventas %28Frias%29\NvoCobro.resx">
+    <EmbeddedResource Include="Personal\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personal\MostrarUsuario.resx">
+      <DependentUpon>MostrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\NvoCobro.resx">
       <DependentUpon>NvoCobro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventas %28Frias%29\Pantalla_Ventas.resx">
+    <EmbeddedResource Include="Ventas\Pantalla_Ventas.resx">
       <DependentUpon>Pantalla_Ventas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventas %28Frias%29\Ventana_Productos.resx">
+    <EmbeddedResource Include="Ventas\Ventana_Productos.resx">
       <DependentUpon>Ventana_Productos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Administrador%28Rica%29" />
-    <Folder Include="Ventas %28Frias%29" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Promociones\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\formIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
