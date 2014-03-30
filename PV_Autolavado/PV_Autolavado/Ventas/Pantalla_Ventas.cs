@@ -170,5 +170,10 @@ namespace PV_Autolavado
 			this.ahrr = ahrr + (-1.30);
 			n++;
 		}
+
+        private void Pantalla_Ventas_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            new Login().Visible = true;
+        }
 	}
 }

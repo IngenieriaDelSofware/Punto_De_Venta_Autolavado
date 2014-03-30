@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
+using MySql.Data.Common;
 using PV_Autolavado.Entidates;
 using System.Windows.Forms;
 
@@ -119,6 +120,57 @@ namespace PV_Autolavado
 			}
 			this.desconectarMySQL();
 		}
+
+        public void guardarEmpleado(Empleado emp)
+        {
+            this.conectarMySQL();
+            string cadena = ( "INSERT INTO `punto_venta_autolavado`.`empleados`" +
+                 "(`nomusu`,`contraseña`,`curp`,`nombre`,`paterno`,`materno`,`fec nacimiento`,`direccion`,`colonia`,`municipio`,`estado`,`fec ingreso`,`puesto`)" +
+                " VALUES( '" +
+                emp.nom_usu + "','" +
+                emp.contraseña + "','" +
+                emp.curp + "','" +
+                emp.nombre + "','" +
+                emp.paterno + "','" +
+                emp.materno + "','" +
+                emp.fec_nacimiento.ToString() + "','" +
+                emp.direccion + "','" +
+                emp.colonia + "','" +
+                emp.municipio + "','" +
+                emp.estado + "','" +
+                emp.fec_ingreso.ToString() + "','" +
+                emp.puesto + "');");
+
+            this.ejecutarQuery(cadena);
+
+            this.desconectarMySQL();
+        }
+
+        public void editarEmpleado(Empleado emp)
+        {
+            this.conectarMySQL();
+
+            string cadena = ("UPDATE `punto_venta_autolavado`.`empleados`" +
+                             "SET" +
+                                "`nomusu` = '" + emp.nom_usu + "'," +
+                                "`contraseña` = '" + emp.contraseña + "'," +
+                                "`curp` = '" + emp.curp + "'," +
+                                "`nombre` = '" + emp.nombre + "'," +
+                                "`paterno` = '" + emp.paterno + "'," +
+                                "`materno` = '" + emp.materno + "'," +
+                                "`fec nacimiento` = '" + emp.fec_nacimiento.ToString() + "'," +
+                                "`direccion` = '" + emp.direccion + "'," +
+                                "`colonia` = '" + emp.colonia + "'," +
+                                "`municipio` = '" + emp.municipio + "'," +
+                                "`estado` = '" + emp.estado + "'," +
+                                "`fec ingreso` = '" + emp.fec_ingreso.ToString() + "'," +
+                                "`puesto` = " + emp.puesto + " " +
+                                " WHERE `id` = " + emp.id + ";");
+
+            this.ejecutarQuery(cadena);
+
+            this.desconectarMySQL();
+        }
 		
 		public List<Servicio> obtenerListaServicios(){
 			List<Servicio> lista = new List<Servicio>();
@@ -146,7 +198,25 @@ namespace PV_Autolavado
 			
 			return lista;
 		}
-		
+
+        public void guardarServicio(Servicio serv)
+        {
+            this.conectarMySQL();
+            string cadena = ("INSERT INTO servicio (descripcion, costo) values ('" + serv.descripcion + "', " + serv.costo + ");");
+
+            this.ejecutarQuery(cadena);
+            this.desconectarMySQL();
+        }
+
+        public void modificarServicio(Servicio serv)
+        {
+            this.conectarMySQL();
+
+            string cadena = ("UPDATE servicio SET descripcion = '" + serv.descripcion + "', costo = " + serv.costo + " WHERE idservicio = " + serv.idservicio +";");
+
+            this.ejecutarQuery(cadena);
+            this.desconectarMySQL();
+        }
 		public int ultimoRegistro(string tabla, string columna){
 			
 			this.conectarMySQL();
@@ -209,7 +279,18 @@ namespace PV_Autolavado
 
             return lista;
         }
-		private string queryId(string id, String tabla){
+
+        public void eliminarRegistro(string tabla, string col, int id ) { 
+            this.conectarMySQL();
+
+            string cadena = ("delete from " + tabla + " where "+ col + " = "+ id +";" );
+
+            this.ejecutarQuery(cadena);
+
+            this.desconectarMySQL();
+        }
+        
+        private string queryId(string id, string tabla){
 			return "SELECT * from " + tabla +" where id='" + id + "'";
 		}
 		

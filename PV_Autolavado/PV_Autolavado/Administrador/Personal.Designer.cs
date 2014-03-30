@@ -29,30 +29,70 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Personal));
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpNacimineto = new System.Windows.Forms.DateTimePicker();
             this.ltxtNombre = new PV_Autolavado.Objetos.LabelTextField();
+            this.ltxtCurp = new PV_Autolavado.Objetos.LabelTextField();
             this.ltxtPaterno = new PV_Autolavado.Objetos.LabelTextField();
             this.ltxtMaterno = new PV_Autolavado.Objetos.LabelTextField();
-            this.ltxtCurp = new PV_Autolavado.Objetos.LabelTextField();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtpNacimineto = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblDireccion = new PV_Autolavado.Objetos.LabelTextField();
-            this.ltxtColonia = new PV_Autolavado.Objetos.LabelTextField();
-            this.ltxtMunicipio = new PV_Autolavado.Objetos.LabelTextField();
             this.ltxtEstado = new PV_Autolavado.Objetos.LabelTextField();
+            this.ltxtMunicipio = new PV_Autolavado.Objetos.LabelTextField();
+            this.ltxtColonia = new PV_Autolavado.Objetos.LabelTextField();
+            this.lblDireccion = new PV_Autolavado.Objetos.LabelTextField();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cbPuesto = new System.Windows.Forms.ComboBox();
-            this.dtpIngreso = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.ltxtPass = new PV_Autolavado.Objetos.LabelTextField();
+            this.ltxtUsario = new PV_Autolavado.Objetos.LabelTextField();
             this.label2 = new System.Windows.Forms.Label();
+            this.dtpIngreso = new System.Windows.Forms.DateTimePicker();
+            this.cbPuesto = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblid = new System.Windows.Forms.Label();
-            this.ltxtUsario = new PV_Autolavado.Objetos.LabelTextField();
-            this.ltxtPass = new PV_Autolavado.Objetos.LabelTextField();
+            this.gtnGuardar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.dtpNacimineto);
+            this.groupBox1.Controls.Add(this.ltxtNombre);
+            this.groupBox1.Controls.Add(this.ltxtCurp);
+            this.groupBox1.Controls.Add(this.ltxtPaterno);
+            this.groupBox1.Controls.Add(this.ltxtMaterno);
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 35);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(604, 103);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Datos Personales";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(301, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 16);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Nacimiento";
+            // 
+            // dtpNacimineto
+            // 
+            this.dtpNacimineto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNacimineto.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNacimineto.Location = new System.Drawing.Point(394, 59);
+            this.dtpNacimineto.Name = "dtpNacimineto";
+            this.dtpNacimineto.Size = new System.Drawing.Size(118, 22);
+            this.dtpNacimineto.TabIndex = 4;
             // 
             // ltxtNombre
             // 
@@ -65,6 +105,18 @@
             this.ltxtNombre.Text = "Nombre";
             this.ltxtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ltxtNombre.texto = "default";
+            // 
+            // ltxtCurp
+            // 
+            this.ltxtCurp.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ltxtCurp.Location = new System.Drawing.Point(6, 61);
+            this.ltxtCurp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ltxtCurp.Name = "ltxtCurp";
+            this.ltxtCurp.Size = new System.Drawing.Size(258, 22);
+            this.ltxtCurp.TabIndex = 3;
+            this.ltxtCurp.Text = "CURP";
+            this.ltxtCurp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ltxtCurp.texto = "CURP";
             // 
             // ltxtPaterno
             // 
@@ -90,45 +142,6 @@
             this.ltxtMaterno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ltxtMaterno.texto = "Materno";
             // 
-            // ltxtCurp
-            // 
-            this.ltxtCurp.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ltxtCurp.Location = new System.Drawing.Point(6, 61);
-            this.ltxtCurp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ltxtCurp.Name = "ltxtCurp";
-            this.ltxtCurp.Size = new System.Drawing.Size(258, 22);
-            this.ltxtCurp.TabIndex = 3;
-            this.ltxtCurp.Text = "CURP";
-            this.ltxtCurp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ltxtCurp.texto = "CURP";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.dtpNacimineto);
-            this.groupBox1.Controls.Add(this.ltxtNombre);
-            this.groupBox1.Controls.Add(this.ltxtCurp);
-            this.groupBox1.Controls.Add(this.ltxtPaterno);
-            this.groupBox1.Controls.Add(this.ltxtMaterno);
-            this.groupBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 35);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(604, 103);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos Personales";
-            // 
-            // dtpNacimineto
-            // 
-            this.dtpNacimineto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNacimineto.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNacimineto.Location = new System.Drawing.Point(394, 59);
-            this.dtpNacimineto.Name = "dtpNacimineto";
-            this.dtpNacimineto.Size = new System.Drawing.Size(118, 22);
-            this.dtpNacimineto.TabIndex = 4;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.ltxtEstado);
@@ -143,27 +156,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Contacto";
             // 
-            // lblDireccion
+            // ltxtEstado
             // 
-            this.lblDireccion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccion.Location = new System.Drawing.Point(7, 26);
-            this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(591, 22);
-            this.lblDireccion.TabIndex = 0;
-            this.lblDireccion.Text = "Direccion";
-            this.lblDireccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.lblDireccion.texto = "Direccion";
-            // 
-            // ltxtColonia
-            // 
-            this.ltxtColonia.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ltxtColonia.Location = new System.Drawing.Point(6, 59);
-            this.ltxtColonia.Name = "ltxtColonia";
-            this.ltxtColonia.Size = new System.Drawing.Size(222, 22);
-            this.ltxtColonia.TabIndex = 1;
-            this.ltxtColonia.Text = "Colonia";
-            this.ltxtColonia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ltxtColonia.texto = "Colonia";
+            this.ltxtEstado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ltxtEstado.Location = new System.Drawing.Point(407, 58);
+            this.ltxtEstado.Name = "ltxtEstado";
+            this.ltxtEstado.Size = new System.Drawing.Size(190, 22);
+            this.ltxtEstado.TabIndex = 3;
+            this.ltxtEstado.Text = "Estado";
+            this.ltxtEstado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ltxtEstado.texto = "Estado";
             // 
             // ltxtMunicipio
             // 
@@ -176,19 +178,31 @@
             this.ltxtMunicipio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ltxtMunicipio.texto = "Municipio";
             // 
-            // ltxtEstado
+            // ltxtColonia
             // 
-            this.ltxtEstado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ltxtEstado.Location = new System.Drawing.Point(407, 58);
-            this.ltxtEstado.Name = "ltxtEstado";
-            this.ltxtEstado.Size = new System.Drawing.Size(190, 22);
-            this.ltxtEstado.TabIndex = 3;
-            this.ltxtEstado.Text = "Estado";
-            this.ltxtEstado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ltxtEstado.texto = "Estado";
+            this.ltxtColonia.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ltxtColonia.Location = new System.Drawing.Point(6, 59);
+            this.ltxtColonia.Name = "ltxtColonia";
+            this.ltxtColonia.Size = new System.Drawing.Size(222, 22);
+            this.ltxtColonia.TabIndex = 1;
+            this.ltxtColonia.Text = "Colonia";
+            this.ltxtColonia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ltxtColonia.texto = "Colonia";
+            // 
+            // lblDireccion
+            // 
+            this.lblDireccion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDireccion.Location = new System.Drawing.Point(7, 26);
+            this.lblDireccion.Name = "lblDireccion";
+            this.lblDireccion.Size = new System.Drawing.Size(591, 22);
+            this.lblDireccion.TabIndex = 0;
+            this.lblDireccion.Text = "Direccion";
+            this.lblDireccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblDireccion.texto = "Direccion";
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.checkBox1);
             this.groupBox3.Controls.Add(this.ltxtPass);
             this.groupBox3.Controls.Add(this.ltxtUsario);
             this.groupBox3.Controls.Add(this.label2);
@@ -197,43 +211,41 @@
             this.groupBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(12, 252);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(604, 158);
+            this.groupBox3.Size = new System.Drawing.Size(604, 107);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Empresa";
             // 
-            // cbPuesto
+            // checkBox1
             // 
-            this.cbPuesto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPuesto.FormattingEnabled = true;
-            this.cbPuesto.Items.AddRange(new object[] {
-            "Puesto",
-            "SysAdmin",
-            "Cajero",
-            "Lavador"});
-            this.cbPuesto.Location = new System.Drawing.Point(6, 66);
-            this.cbPuesto.Name = "cbPuesto";
-            this.cbPuesto.Size = new System.Drawing.Size(146, 24);
-            this.cbPuesto.TabIndex = 0;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(326, 25);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(165, 22);
+            this.checkBox1.TabIndex = 5;
+            this.checkBox1.Text = "Mostrar Contraseña";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // dtpIngreso
+            // ltxtPass
             // 
-            this.dtpIngreso.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpIngreso.Location = new System.Drawing.Point(211, 64);
-            this.dtpIngreso.Name = "dtpIngreso";
-            this.dtpIngreso.Size = new System.Drawing.Size(109, 22);
-            this.dtpIngreso.TabIndex = 1;
+            this.ltxtPass.Location = new System.Drawing.Point(156, 25);
+            this.ltxtPass.Name = "ltxtPass";
+            this.ltxtPass.PasswordChar = '*';
+            this.ltxtPass.Size = new System.Drawing.Size(164, 26);
+            this.ltxtPass.TabIndex = 4;
+            this.ltxtPass.Text = "Password";
+            this.ltxtPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ltxtPass.texto = "Password";
             // 
-            // label1
+            // ltxtUsario
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(301, 61);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 16);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Nacimiento";
+            this.ltxtUsario.Location = new System.Drawing.Point(6, 26);
+            this.ltxtUsario.Name = "ltxtUsario";
+            this.ltxtUsario.Size = new System.Drawing.Size(143, 26);
+            this.ltxtUsario.TabIndex = 3;
+            this.ltxtUsario.Text = "Usuario";
+            this.ltxtUsario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ltxtUsario.texto = "Usuario";
             // 
             // label2
             // 
@@ -244,6 +256,29 @@
             this.label2.Size = new System.Drawing.Size(50, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Ingreso";
+            // 
+            // dtpIngreso
+            // 
+            this.dtpIngreso.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpIngreso.Location = new System.Drawing.Point(211, 64);
+            this.dtpIngreso.Name = "dtpIngreso";
+            this.dtpIngreso.Size = new System.Drawing.Size(109, 22);
+            this.dtpIngreso.TabIndex = 1;
+            // 
+            // cbPuesto
+            // 
+            this.cbPuesto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPuesto.FormattingEnabled = true;
+            this.cbPuesto.Items.AddRange(new object[] {
+            "SysAdmin",
+            "Cajero",
+            "Lavador"});
+            this.cbPuesto.Location = new System.Drawing.Point(6, 66);
+            this.cbPuesto.Name = "cbPuesto";
+            this.cbPuesto.Size = new System.Drawing.Size(146, 24);
+            this.cbPuesto.TabIndex = 0;
+            this.cbPuesto.Text = "Puesto";
             // 
             // label3
             // 
@@ -265,33 +300,41 @@
             this.lblid.TabIndex = 8;
             this.lblid.Text = "id";
             // 
-            // ltxtUsario
+            // gtnGuardar
             // 
-            this.ltxtUsario.Location = new System.Drawing.Point(6, 26);
-            this.ltxtUsario.Name = "ltxtUsario";
-            this.ltxtUsario.Size = new System.Drawing.Size(143, 26);
-            this.ltxtUsario.TabIndex = 3;
-            this.ltxtUsario.Text = "Usuario";
-            this.ltxtUsario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ltxtUsario.texto = "Usuario";
+            this.gtnGuardar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.gtnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("gtnGuardar.Image")));
+            this.gtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.gtnGuardar.Location = new System.Drawing.Point(545, 365);
+            this.gtnGuardar.Name = "gtnGuardar";
+            this.gtnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.gtnGuardar.TabIndex = 9;
+            this.gtnGuardar.Text = "Aceptar";
+            this.gtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.gtnGuardar.UseVisualStyleBackColor = true;
+            this.gtnGuardar.Click += new System.EventHandler(this.gtnGuardar_Click);
             // 
-            // ltxtPass
+            // button1
             // 
-            this.ltxtPass.Location = new System.Drawing.Point(156, 25);
-            this.ltxtPass.Name = "ltxtPass";
-            this.ltxtPass.PasswordChar = '*';
-            this.ltxtPass.Size = new System.Drawing.Size(164, 26);
-            this.ltxtPass.TabIndex = 4;
-            this.ltxtPass.Text = "Password";
-            this.ltxtPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ltxtPass.texto = "Password";
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(460, 365);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(79, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Cancelar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Personal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(632, 478);
+            this.ClientSize = new System.Drawing.Size(632, 403);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.gtnGuardar);
             this.Controls.Add(this.lblid);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox3);
@@ -337,6 +380,9 @@
         private System.Windows.Forms.Label lblid;
         private Objetos.LabelTextField ltxtPass;
         private Objetos.LabelTextField ltxtUsario;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button gtnGuardar;
+        private System.Windows.Forms.Button button1;
 
     }
 }

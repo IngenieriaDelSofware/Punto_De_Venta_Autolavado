@@ -13,6 +13,8 @@ namespace PV_Autolavado.Administrador
 {
     public partial class Personal : Form
     {
+        public bool editar = false;
+
         public Personal(String username)
         {
             InitializeComponent();
@@ -25,6 +27,7 @@ namespace PV_Autolavado.Administrador
             InitializeComponent();
             this.Text = username + " | Editar Empleado";
             this.llenarCampos(personal);
+            editar = true;
         }
 
         private void desactivarCampos()
@@ -58,5 +61,40 @@ namespace PV_Autolavado.Administrador
            this.cbPuesto.SelectedIndex = emp.puesto;
            
         }
+
+        private void gtnGuardar_Click(object sender, EventArgs e)
+        {
+            Empleado emp = new Empleado();
+
+            emp.id = int.Parse(this.lblid.Text);
+            emp.nom_usu = this.ltxtUsario.Text;
+            emp.contraseña = this.ltxtPass.Text;
+            emp.curp = this.ltxtCurp.Text; 
+            emp.nombre = this.ltxtNombre.Text; 
+            emp.paterno = this.ltxtPaterno.Text; 
+            emp.materno = this.ltxtMaterno.Text;
+            emp.fec_nacimiento = this.dtpNacimineto.Value.ToString();
+            emp.direccion = this.lblDireccion.Text; 
+            emp.colonia = this.ltxtColonia.Text;
+            emp.municipio = this.ltxtMunicipio.Text; 
+            emp.estado = this.ltxtEstado.Text; 
+            emp.fec_ingreso = this.dtpIngreso.Value.ToString();
+            emp.puesto = this.cbPuesto.SelectedIndex;
+
+            if (editar == true)
+            {
+                new query().editarEmpleado(emp);
+            }
+            else
+            {
+                new query().guardarEmpleado(emp);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
     }
 }
