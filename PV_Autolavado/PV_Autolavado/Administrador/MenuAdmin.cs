@@ -192,5 +192,11 @@ namespace PV_Autolavado
             new Login().Visible = true;
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            promociones p = new promociones();
+            p.Show();
+        }
 	}
 }

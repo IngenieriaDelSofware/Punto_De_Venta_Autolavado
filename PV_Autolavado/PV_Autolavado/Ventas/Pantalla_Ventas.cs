@@ -152,6 +152,7 @@ namespace PV_Autolavado
 				if (lblModelo.Text == "Modelo"){
 					val = true;
 				}
+          
 
 			return val;
 		}

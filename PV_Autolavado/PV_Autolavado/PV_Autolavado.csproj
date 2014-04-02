@@ -79,6 +79,13 @@
     <Compile Include="Administrador\Personal.Designer.cs">
       <DependentUpon>Personal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Administrador\promociones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\promociones.Designer.cs">
+      <DependentUpon>promociones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entidates\promocion.cs" />
     <Compile Include="Origen Datos\mysql.cs" />
     <Compile Include="Origen Datos\query.cs" />
     <Compile Include="Entidates\Detalle_ticket.cs" />
@@ -152,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administrador\Personal.resx">
       <DependentUpon>Personal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\promociones.resx">
+      <DependentUpon>promociones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

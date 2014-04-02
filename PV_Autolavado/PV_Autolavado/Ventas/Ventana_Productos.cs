@@ -47,5 +47,10 @@ namespace PV_Autolavado
 				
 			}
 		}
+
+        private void pnlServicios_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
 	}
 }

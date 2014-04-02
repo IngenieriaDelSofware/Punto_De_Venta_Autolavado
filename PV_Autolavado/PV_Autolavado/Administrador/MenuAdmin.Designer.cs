@@ -40,6 +40,8 @@ namespace PV_Autolavado
             this.Usuario = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -76,6 +78,13 @@ namespace PV_Autolavado
             this.ltxtBuscar = new PV_Autolavado.Objetos.LabelTextField();
             this.ltxtDescripcion = new PV_Autolavado.Objetos.LabelTextField();
             this.ptxtCosto = new PV_Autolavado.PriceTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelTextField1 = new PV_Autolavado.Objetos.LabelTextField();
+            this.button2 = new System.Windows.Forms.Button();
+            this.labelTextField2 = new PV_Autolavado.Objetos.LabelTextField();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).BeginInit();
@@ -106,6 +115,14 @@ namespace PV_Autolavado
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button4);
+            this.tabPage3.Controls.Add(this.label3);
+            this.tabPage3.Controls.Add(this.labelTextField2);
+            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.labelTextField1);
+            this.tabPage3.Controls.Add(this.label2);
+            this.tabPage3.Controls.Add(this.button5);
+            this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -113,6 +130,25 @@ namespace PV_Autolavado
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Promociones";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(26, 97);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(147, 23);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Promociones anteriores";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(26, 42);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(121, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Nueva promoción";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabPage2
             // 
@@ -473,6 +509,60 @@ namespace PV_Autolavado
             this.ptxtCosto.TabIndex = 7;
             this.ptxtCosto.Text = "0.00";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(250, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Eliminar promocion";
+            // 
+            // labelTextField1
+            // 
+            this.labelTextField1.Location = new System.Drawing.Point(363, 100);
+            this.labelTextField1.Name = "labelTextField1";
+            this.labelTextField1.Size = new System.Drawing.Size(100, 20);
+            this.labelTextField1.TabIndex = 5;
+            this.labelTextField1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.labelTextField1.texto = "default";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(253, 57);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Ver";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // labelTextField2
+            // 
+            this.labelTextField2.Location = new System.Drawing.Point(363, 59);
+            this.labelTextField2.Name = "labelTextField2";
+            this.labelTextField2.Size = new System.Drawing.Size(100, 20);
+            this.labelTextField2.TabIndex = 7;
+            this.labelTextField2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.labelTextField2.texto = "default";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(253, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(133, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Ver id de promocion actual";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(388, 143);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Aceptar";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // MenuAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -488,6 +578,8 @@ namespace PV_Autolavado
             this.Text = "Administrador";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuAdministrador_FormClosed);
             this.Load += new System.EventHandler(this.MenuAdministrador_Load);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -553,5 +645,13 @@ namespace PV_Autolavado
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label3;
+        private Objetos.LabelTextField labelTextField2;
+        private System.Windows.Forms.Button button2;
+        private Objetos.LabelTextField labelTextField1;
+        private System.Windows.Forms.Label label2;
 	}
 }

@@ -48,6 +48,7 @@ namespace PV_Autolavado
             this.pnlServicios.Name = "pnlServicios";
             this.pnlServicios.Size = new System.Drawing.Size(404, 347);
             this.pnlServicios.TabIndex = 1;
+            this.pnlServicios.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlServicios_Paint);
             // 
             // btnCerrar
             // 
