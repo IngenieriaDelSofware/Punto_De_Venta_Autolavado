@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using PV_Autolavado.Entidates;
+using PV_Autolavado.Objetos;
 
 namespace PV_Autolavado
 {
@@ -69,8 +70,8 @@ namespace PV_Autolavado
 			t.modelo = lblModelo.Text;
 			t.color = lblColor.Text;
 			t.total = ptxtTotal.Cantidad;
-			t.hora = DateTime.Now.TimeOfDay.ToString();
-			t.fecha = DateTime.Now.Date.ToShortDateString();
+            t.hora = new Tiempo().Hora();
+			t.fecha = new Tiempo().fechaCorta();
 			
 			foreach (DataGridViewRow fila in dgvVentas.Rows){
 				Detalle_ticket dt = new Detalle_ticket();

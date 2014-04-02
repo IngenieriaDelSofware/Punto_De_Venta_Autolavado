@@ -491,7 +491,7 @@ namespace PV_Autolavado {
             
             private global::System.Data.DataColumn columnid_puesto;
             
-            private global::System.Data.DataColumn columndecripcion;
+            private global::System.Data.DataColumn columndescripcion;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -536,9 +536,9 @@ namespace PV_Autolavado {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn decripcionColumn {
+            public global::System.Data.DataColumn descripcionColumn {
                 get {
-                    return this.columndecripcion;
+                    return this.columndescripcion;
                 }
             }
             
@@ -579,11 +579,11 @@ namespace PV_Autolavado {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cat_puestosRow Addcat_puestosRow(string decripcion) {
+            public cat_puestosRow Addcat_puestosRow(string descripcion) {
                 cat_puestosRow rowcat_puestosRow = ((cat_puestosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        decripcion};
+                        descripcion};
                 rowcat_puestosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowcat_puestosRow);
                 return rowcat_puestosRow;
@@ -614,7 +614,7 @@ namespace PV_Autolavado {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnid_puesto = base.Columns["id_puesto"];
-                this.columndecripcion = base.Columns["decripcion"];
+                this.columndescripcion = base.Columns["descripcion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -622,8 +622,8 @@ namespace PV_Autolavado {
             private void InitClass() {
                 this.columnid_puesto = new global::System.Data.DataColumn("id_puesto", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_puesto);
-                this.columndecripcion = new global::System.Data.DataColumn("decripcion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndecripcion);
+                this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescripcion);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_puesto}, true));
                 this.columnid_puesto.AutoIncrement = true;
@@ -631,8 +631,8 @@ namespace PV_Autolavado {
                 this.columnid_puesto.AutoIncrementStep = -1;
                 this.columnid_puesto.AllowDBNull = false;
                 this.columnid_puesto.Unique = true;
-                this.columndecripcion.AllowDBNull = false;
-                this.columndecripcion.MaxLength = 45;
+                this.columndescripcion.AllowDBNull = false;
+                this.columndescripcion.MaxLength = 45;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1409,9 +1409,9 @@ namespace PV_Autolavado {
             
             private global::System.Data.DataColumn columnestado;
             
-            private global::System.Data.DataColumn columnfec_ingreso;
-            
             private global::System.Data.DataColumn columnpuesto;
+            
+            private global::System.Data.DataColumn columnfec_ingreso;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1544,17 +1544,17 @@ namespace PV_Autolavado {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn fec_ingresoColumn {
+            public global::System.Data.DataColumn puestoColumn {
                 get {
-                    return this.columnfec_ingreso;
+                    return this.columnpuesto;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn puestoColumn {
+            public global::System.Data.DataColumn fec_ingresoColumn {
                 get {
-                    return this.columnpuesto;
+                    return this.columnfec_ingreso;
                 }
             }
             
@@ -1595,7 +1595,7 @@ namespace PV_Autolavado {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public empleadosRow AddempleadosRow(string nomusu, string contraseña, string curp, string nombre, string paterno, string materno, string fec_nacimiento, string direccion, string colonia, string municipio, string estado, string fec_ingreso, cat_puestosRow parentcat_puestosRowByfk_puesto) {
+            public empleadosRow AddempleadosRow(string nomusu, string contraseña, string curp, string nombre, string paterno, string materno, string fec_nacimiento, string direccion, string colonia, string municipio, string estado, cat_puestosRow parentcat_puestosRowByfk_puesto, string fec_ingreso) {
                 empleadosRow rowempleadosRow = ((empleadosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1610,10 +1610,10 @@ namespace PV_Autolavado {
                         colonia,
                         municipio,
                         estado,
-                        fec_ingreso,
-                        null};
+                        null,
+                        fec_ingreso};
                 if ((parentcat_puestosRowByfk_puesto != null)) {
-                    columnValuesArray[13] = parentcat_puestosRowByfk_puesto[0];
+                    columnValuesArray[12] = parentcat_puestosRowByfk_puesto[0];
                 }
                 rowempleadosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowempleadosRow);
@@ -1651,13 +1651,13 @@ namespace PV_Autolavado {
                 this.columnnombre = base.Columns["nombre"];
                 this.columnpaterno = base.Columns["paterno"];
                 this.columnmaterno = base.Columns["materno"];
-                this.columnfec_nacimiento = base.Columns["fec nacimiento"];
+                this.columnfec_nacimiento = base.Columns["fec_nacimiento"];
                 this.columndireccion = base.Columns["direccion"];
                 this.columncolonia = base.Columns["colonia"];
                 this.columnmunicipio = base.Columns["municipio"];
                 this.columnestado = base.Columns["estado"];
-                this.columnfec_ingreso = base.Columns["fec ingreso"];
                 this.columnpuesto = base.Columns["puesto"];
+                this.columnfec_ingreso = base.Columns["fec_ingreso"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1677,7 +1677,7 @@ namespace PV_Autolavado {
                 base.Columns.Add(this.columnpaterno);
                 this.columnmaterno = new global::System.Data.DataColumn("materno", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmaterno);
-                this.columnfec_nacimiento = new global::System.Data.DataColumn("fec nacimiento", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnfec_nacimiento = new global::System.Data.DataColumn("fec_nacimiento", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfec_nacimiento);
                 this.columndireccion = new global::System.Data.DataColumn("direccion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndireccion);
@@ -1687,10 +1687,10 @@ namespace PV_Autolavado {
                 base.Columns.Add(this.columnmunicipio);
                 this.columnestado = new global::System.Data.DataColumn("estado", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnestado);
-                this.columnfec_ingreso = new global::System.Data.DataColumn("fec ingreso", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfec_ingreso);
                 this.columnpuesto = new global::System.Data.DataColumn("puesto", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpuesto);
+                this.columnfec_ingreso = new global::System.Data.DataColumn("fec_ingreso", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfec_ingreso);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -1720,9 +1720,9 @@ namespace PV_Autolavado {
                 this.columnmunicipio.MaxLength = 45;
                 this.columnestado.AllowDBNull = false;
                 this.columnestado.MaxLength = 45;
+                this.columnpuesto.AllowDBNull = false;
                 this.columnfec_ingreso.AllowDBNull = false;
                 this.columnfec_ingreso.MaxLength = 45;
-                this.columnpuesto.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2589,12 +2589,12 @@ namespace PV_Autolavado {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string decripcion {
+            public string descripcion {
                 get {
-                    return ((string)(this[this.tablecat_puestos.decripcionColumn]));
+                    return ((string)(this[this.tablecat_puestos.descripcionColumn]));
                 }
                 set {
-                    this[this.tablecat_puestos.decripcionColumn] = value;
+                    this[this.tablecat_puestos.descripcionColumn] = value;
                 }
             }
             
@@ -2920,23 +2920,23 @@ namespace PV_Autolavado {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string fec_ingreso {
-                get {
-                    return ((string)(this[this.tableempleados.fec_ingresoColumn]));
-                }
-                set {
-                    this[this.tableempleados.fec_ingresoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int puesto {
                 get {
                     return ((int)(this[this.tableempleados.puestoColumn]));
                 }
                 set {
                     this[this.tableempleados.puestoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string fec_ingreso {
+                get {
+                    return ((string)(this[this.tableempleados.fec_ingresoColumn]));
+                }
+                set {
+                    this[this.tableempleados.fec_ingresoColumn] = value;
                 }
             }
             
@@ -3510,11 +3510,11 @@ namespace PV_Autolavado.Datos_AutolavadoTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "cat_puestos";
             tableMapping.ColumnMappings.Add("id_puesto", "id_puesto");
-            tableMapping.ColumnMappings.Add("decripcion", "decripcion");
+            tableMapping.ColumnMappings.Add("descripcion", "descripcion");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `cat_puestos` WHERE ((`id_puesto` = @p1) AND (`decripcion` = @p2))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `cat_puestos` WHERE ((`id_puesto` = @p1) AND (`descripcion` = @p2))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -3529,31 +3529,31 @@ namespace PV_Autolavado.Datos_AutolavadoTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "decripcion";
+            param.SourceColumn = "descripcion";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `cat_puestos` (`decripcion`) VALUES (@p1)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `cat_puestos` (`descripcion`) VALUES (@p1)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "decripcion";
+            param.SourceColumn = "descripcion";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `cat_puestos` SET `decripcion` = @p1 WHERE ((`id_puesto` = @p2) AND (`decr" +
-                "ipcion` = @p3))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `cat_puestos` SET `descripcion` = @p1 WHERE ((`id_puesto` = @p2) AND (`des" +
+                "cripcion` = @p3))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "decripcion";
+            param.SourceColumn = "descripcion";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -3568,7 +3568,7 @@ namespace PV_Autolavado.Datos_AutolavadoTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "decripcion";
+            param.SourceColumn = "descripcion";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -3583,11 +3583,53 @@ namespace PV_Autolavado.Datos_AutolavadoTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[4];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `id_puesto`, `decripcion` FROM `cat_puestos`";
+            this._commandCollection[0].CommandText = "SELECT `id_puesto`, `descripcion` FROM `cat_puestos`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "DELETE FROM `cat_puestos` WHERE (`id_puesto` = @p1)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id_puesto";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "INSERT INTO `cat_puestos` (`decripcion`) VALUES (@p1)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.Object;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "decripcion";
+            this._commandCollection[2].Parameters.Add(param);
+            this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "UPDATE `cat_puestos` SET `decripcion` = @p1 WHERE (`id_puesto` = @p2)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.Object;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "decripcion";
+            this._commandCollection[3].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p2";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id_puesto";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[3].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3730,6 +3772,89 @@ namespace PV_Autolavado.Datos_AutolavadoTableAdapters {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQuery(int p1) {
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(p1));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQuery(object p1) {
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[2];
+            if ((p1 == null)) {
+                throw new global::System.ArgumentNullException("p1");
+            }
+            else {
+                command.Parameters[0].Value = ((object)(p1));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(object p1, int p2) {
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[3];
+            if ((p1 == null)) {
+                throw new global::System.ArgumentNullException("p1");
+            }
+            else {
+                command.Parameters[0].Value = ((object)(p1));
+            }
+            command.Parameters[1].Value = ((int)(p2));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -4676,17 +4801,18 @@ namespace PV_Autolavado.Datos_AutolavadoTableAdapters {
             tableMapping.ColumnMappings.Add("nombre", "nombre");
             tableMapping.ColumnMappings.Add("paterno", "paterno");
             tableMapping.ColumnMappings.Add("materno", "materno");
-            tableMapping.ColumnMappings.Add("fec nacimiento", "fec nacimiento");
+            tableMapping.ColumnMappings.Add("fec nacimiento", "fec_nacimiento");
             tableMapping.ColumnMappings.Add("direccion", "direccion");
             tableMapping.ColumnMappings.Add("colonia", "colonia");
             tableMapping.ColumnMappings.Add("municipio", "municipio");
             tableMapping.ColumnMappings.Add("estado", "estado");
-            tableMapping.ColumnMappings.Add("fec ingreso", "fec ingreso");
             tableMapping.ColumnMappings.Add("puesto", "puesto");
+            tableMapping.ColumnMappings.Add("fec_nacimiento", "fec_nacimiento");
+            tableMapping.ColumnMappings.Add("fec_ingreso", "fec_ingreso");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `empleados` WHERE ((`id` = @p1) AND (`nomusu` = @p2) AND (`contraseña` = @p3) AND (`curp` = @p4) AND (`nombre` = @p5) AND (`paterno` = @p6) AND (`materno` = @p7) AND (`fec nacimiento` = @p8) AND (`direccion` = @p9) AND (`colonia` = @p10) AND (`municipio` = @p11) AND (`estado` = @p12) AND (`fec ingreso` = @p13) AND (`puesto` = @p14))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `empleados` WHERE ((`id` = @p1) AND (`nomusu` = @p2) AND (`contraseña` = @p3) AND (`curp` = @p4) AND (`nombre` = @p5) AND (`paterno` = @p6) AND (`materno` = @p7) AND (`fec_nacimiento` = @p8) AND (`direccion` = @p9) AND (`colonia` = @p10) AND (`municipio` = @p11) AND (`estado` = @p12) AND (`fec_ingreso` = @p13) AND (`puesto` = @p14))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -4749,7 +4875,7 @@ namespace PV_Autolavado.Datos_AutolavadoTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "fec nacimiento";
+            param.SourceColumn = "fec_nacimiento";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -4789,7 +4915,7 @@ namespace PV_Autolavado.Datos_AutolavadoTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "fec ingreso";
+            param.SourceColumn = "fec_ingreso";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -4803,7 +4929,7 @@ namespace PV_Autolavado.Datos_AutolavadoTableAdapters {
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `empleados` (`nomusu`, `contraseña`, `curp`, `nombre`, `paterno`, `ma" +
-                "terno`, `fec nacimiento`, `direccion`, `colonia`, `municipio`, `estado`, `fec in" +
+                "terno`, `fec_nacimiento`, `direccion`, `colonia`, `municipio`, `estado`, `fec_in" +
                 "greso`, `puesto`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p1" +
                 "1, @p12, @p13)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
@@ -4854,7 +4980,7 @@ namespace PV_Autolavado.Datos_AutolavadoTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "fec nacimiento";
+            param.SourceColumn = "fec_nacimiento";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p8";
@@ -4889,7 +5015,7 @@ namespace PV_Autolavado.Datos_AutolavadoTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "fec ingreso";
+            param.SourceColumn = "fec_ingreso";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p13";
@@ -4900,7 +5026,7 @@ namespace PV_Autolavado.Datos_AutolavadoTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `empleados` SET `nomusu` = @p1, `contraseña` = @p2, `curp` = @p3, `nombre` = @p4, `paterno` = @p5, `materno` = @p6, `fec nacimiento` = @p7, `direccion` = @p8, `colonia` = @p9, `municipio` = @p10, `estado` = @p11, `fec ingreso` = @p12, `puesto` = @p13 WHERE ((`id` = @p14) AND (`nomusu` = @p15) AND (`contraseña` = @p16) AND (`curp` = @p17) AND (`nombre` = @p18) AND (`paterno` = @p19) AND (`materno` = @p20) AND (`fec nacimiento` = @p21) AND (`direccion` = @p22) AND (`colonia` = @p23) AND (`municipio` = @p24) AND (`estado` = @p25) AND (`fec ingreso` = @p26) AND (`puesto` = @p27))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `empleados` SET `nomusu` = @p1, `contraseña` = @p2, `curp` = @p3, `nombre` = @p4, `paterno` = @p5, `materno` = @p6, `fec_nacimiento` = @p7, `direccion` = @p8, `colonia` = @p9, `municipio` = @p10, `estado` = @p11, `fec_ingreso` = @p12, `puesto` = @p13 WHERE ((`id` = @p14) AND (`nomusu` = @p15) AND (`contraseña` = @p16) AND (`curp` = @p17) AND (`nombre` = @p18) AND (`paterno` = @p19) AND (`materno` = @p20) AND (`fec_nacimiento` = @p21) AND (`direccion` = @p22) AND (`colonia` = @p23) AND (`municipio` = @p24) AND (`estado` = @p25) AND (`fec_ingreso` = @p26) AND (`puesto` = @p27))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -4949,7 +5075,7 @@ namespace PV_Autolavado.Datos_AutolavadoTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "fec nacimiento";
+            param.SourceColumn = "fec_nacimiento";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p8";
@@ -4984,7 +5110,7 @@ namespace PV_Autolavado.Datos_AutolavadoTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "fec ingreso";
+            param.SourceColumn = "fec_ingreso";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p13";
@@ -5054,7 +5180,7 @@ namespace PV_Autolavado.Datos_AutolavadoTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "fec nacimiento";
+            param.SourceColumn = "fec_nacimiento";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -5094,7 +5220,7 @@ namespace PV_Autolavado.Datos_AutolavadoTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "fec ingreso";
+            param.SourceColumn = "fec_ingreso";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -5117,13 +5243,122 @@ namespace PV_Autolavado.Datos_AutolavadoTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT `id`, `nomusu`, `contraseña`, `curp`, `nombre`, `paterno`, `materno`, `fec" +
-                " nacimiento`, `direccion`, `colonia`, `municipio`, `estado`, `fec ingreso`, `pue" +
+                "_nacimiento`, `direccion`, `colonia`, `municipio`, `estado`, `fec_ingreso`, `pue" +
                 "sto` FROM `empleados`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"INSERT INTO `empleados`
+ (`nomusu`, `contraseña`, `curp`, `nombre`, `paterno`, `materno`, `fec_nacimiento`, `direccion`, `colonia`, `municipio`, `estado`, `fec_ingreso`, `puesto`)
+ VALUES (@nomusu, @contraseña, @curp, @nombre, @paterno, @materno, @fecnacimiento, @direccion, @colonia, @municipio, @estado, @fecingreso, @puesto)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@nomusu";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 10;
+            param.IsNullable = true;
+            param.SourceColumn = "nomusu";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@contraseña";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "contraseña";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@curp";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 18;
+            param.IsNullable = true;
+            param.SourceColumn = "curp";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@nombre";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "nombre";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@paterno";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "paterno";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@materno";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "materno";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@fecnacimiento";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 45;
+            param.IsNullable = true;
+            param.SourceColumn = "fec_nacimiento";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@direccion";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 45;
+            param.IsNullable = true;
+            param.SourceColumn = "direccion";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@colonia";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 45;
+            param.IsNullable = true;
+            param.SourceColumn = "colonia";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@municipio";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 45;
+            param.IsNullable = true;
+            param.SourceColumn = "municipio";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@estado";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 45;
+            param.IsNullable = true;
+            param.SourceColumn = "estado";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@fecingreso";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 45;
+            param.IsNullable = true;
+            param.SourceColumn = "fec_ingreso";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@puesto";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "puesto";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5561,6 +5796,102 @@ namespace PV_Autolavado.Datos_AutolavadoTableAdapters {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQuery(string nomusu, string contraseña, string curp, string nombre, string paterno, string materno, string fecnacimiento, string direccion, string colonia, string municipio, string estado, string fecingreso, int puesto) {
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[1];
+            if ((nomusu == null)) {
+                throw new global::System.ArgumentNullException("nomusu");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(nomusu));
+            }
+            if ((contraseña == null)) {
+                throw new global::System.ArgumentNullException("contraseña");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(contraseña));
+            }
+            if ((curp == null)) {
+                throw new global::System.ArgumentNullException("curp");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(curp));
+            }
+            if ((nombre == null)) {
+                throw new global::System.ArgumentNullException("nombre");
+            }
+            else {
+                command.Parameters[3].Value = ((string)(nombre));
+            }
+            if ((paterno == null)) {
+                throw new global::System.ArgumentNullException("paterno");
+            }
+            else {
+                command.Parameters[4].Value = ((string)(paterno));
+            }
+            if ((materno == null)) {
+                throw new global::System.ArgumentNullException("materno");
+            }
+            else {
+                command.Parameters[5].Value = ((string)(materno));
+            }
+            if ((fecnacimiento == null)) {
+                throw new global::System.ArgumentNullException("fecnacimiento");
+            }
+            else {
+                command.Parameters[6].Value = ((string)(fecnacimiento));
+            }
+            if ((direccion == null)) {
+                throw new global::System.ArgumentNullException("direccion");
+            }
+            else {
+                command.Parameters[7].Value = ((string)(direccion));
+            }
+            if ((colonia == null)) {
+                throw new global::System.ArgumentNullException("colonia");
+            }
+            else {
+                command.Parameters[8].Value = ((string)(colonia));
+            }
+            if ((municipio == null)) {
+                throw new global::System.ArgumentNullException("municipio");
+            }
+            else {
+                command.Parameters[9].Value = ((string)(municipio));
+            }
+            if ((estado == null)) {
+                throw new global::System.ArgumentNullException("estado");
+            }
+            else {
+                command.Parameters[10].Value = ((string)(estado));
+            }
+            if ((fecingreso == null)) {
+                throw new global::System.ArgumentNullException("fecingreso");
+            }
+            else {
+                command.Parameters[11].Value = ((string)(fecingreso));
+            }
+            command.Parameters[12].Value = ((int)(puesto));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -6420,12 +6751,26 @@ namespace PV_Autolavado.Datos_AutolavadoTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT `id_ticket`, `id_usuario`, `id_lavador`, `propietario`, `placas`, `marca`," +
                 " `modelo`, `color`, `total`, `hora`, `fecha` FROM `ticket`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT `id_ticket`, `id_usuario`, `id_lavador`, `propietario`, `placas`, `marca`," +
+                " `modelo`, `color`, `total`, `hora`, `fecha` FROM `ticket` WHERE `fecha` = @fech" +
+                "a";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@fecha";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "fecha";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6447,6 +6792,42 @@ namespace PV_Autolavado.Datos_AutolavadoTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual Datos_Autolavado.ticketDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            Datos_Autolavado.ticketDataTable dataTable = new Datos_Autolavado.ticketDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(Datos_Autolavado.ticketDataTable dataTable, string fecha) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((fecha == null)) {
+                throw new global::System.ArgumentNullException("fecha");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(fecha));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Datos_Autolavado.ticketDataTable GetDataBy(string fecha) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((fecha == null)) {
+                throw new global::System.ArgumentNullException("fecha");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(fecha));
+            }
             Datos_Autolavado.ticketDataTable dataTable = new Datos_Autolavado.ticketDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

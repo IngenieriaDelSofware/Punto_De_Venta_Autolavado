@@ -36,7 +36,7 @@ namespace PV_Autolavado
 		
 		void Button2Click(object sender, EventArgs e)
 		{
-			
+            Application.Exit();
 		}
 		
 		public void validarLogin(){
