@@ -35,6 +35,7 @@ namespace PV_Autolavado
 	
 		void eventoClick(object sender, EventArgs e){
 			this.padre.agregarFilas(this.servicio);
+            this.Enabled = false;
 		}
 	
 	}

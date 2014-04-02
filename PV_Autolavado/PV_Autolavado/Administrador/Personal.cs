@@ -64,30 +64,38 @@ namespace PV_Autolavado.Administrador
 
         private void gtnGuardar_Click(object sender, EventArgs e)
         {
-            Empleado emp = new Empleado();
-
-            emp.id = int.Parse(this.lblid.Text);
-            emp.nom_usu = this.ltxtUsario.Text;
-            emp.contraseña = this.ltxtPass.Text;
-            emp.curp = this.ltxtCurp.Text; 
-            emp.nombre = this.ltxtNombre.Text; 
-            emp.paterno = this.ltxtPaterno.Text; 
-            emp.materno = this.ltxtMaterno.Text;
-            emp.fec_nacimiento = this.dtpNacimineto.Value.ToString();
-            emp.direccion = this.lblDireccion.Text; 
-            emp.colonia = this.ltxtColonia.Text;
-            emp.municipio = this.ltxtMunicipio.Text; 
-            emp.estado = this.ltxtEstado.Text; 
-            emp.fec_ingreso = this.dtpIngreso.Value.ToString();
-            emp.puesto = this.cbPuesto.SelectedIndex;
-
-            if (editar == true)
+            try
             {
-                new query().editarEmpleado(emp);
+                
+                Empleado emp = new Empleado();
+
+                emp.id = int.Parse(this.lblid.Text);
+                emp.nom_usu = this.ltxtUsario.Text;
+                emp.contraseña = this.ltxtPass.Text;
+                emp.curp = this.ltxtCurp.Text;
+                emp.nombre = this.ltxtNombre.Text;
+                emp.paterno = this.ltxtPaterno.Text;
+                emp.materno = this.ltxtMaterno.Text;
+                emp.fec_nacimiento = new Tiempo().convertirAFormatoFechaMySQL(this.dtpNacimineto.Value);
+                emp.direccion = this.lblDireccion.Text;
+                emp.colonia = this.ltxtColonia.Text;
+                emp.municipio = this.ltxtMunicipio.Text;
+                emp.estado = this.ltxtEstado.Text;
+                emp.fec_ingreso = new Tiempo().convertirAFormatoFechaMySQL(this.dtpIngreso.Value);
+                emp.puesto = this.cbPuesto.SelectedIndex;
+
+                if (editar == true)
+                {
+                    new query().editarEmpleado(emp);
+                }
+                else
+                {
+                    new query().guardarEmpleado(emp);
+                }
             }
-            else
+            catch (Exception ext)
             {
-                new query().guardarEmpleado(emp);
+                MessageBox.Show("Revisa bien todos los campos");
             }
         }
 

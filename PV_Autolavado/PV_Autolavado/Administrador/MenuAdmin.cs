@@ -4,6 +4,7 @@ using PV_Autolavado.Entidates;
 using System.Collections.Generic;
 using PV_Autolavado.Administrador;
 using PV_Autolavado.Objetos;
+using PV_Autolavado.Reportes;
 
 
 namespace PV_Autolavado
@@ -20,37 +21,10 @@ namespace PV_Autolavado
 
         private void MenuAdministrador_Load(object sender, EventArgs e)
         {
-            this.llenarTablaEmpleados();
-            this.llenarTablaServicios();
+            this.servicioTableAdapter.Fill(this.datos_Autolavado.servicio);
+            this.cat_puestosTableAdapter.Fill(this.datos_Autolavado.cat_puestos);
+            this.empleadosTableAdapter.Fill(this.datos_Autolavado.empleados);
             this.cambiarCampos(false);
-        }
-
-        private void llenarTablaEmpleados()
-        {
-            this.dgvServicios.Rows.Clear();
-
-            this.dgvEmpleados.Rows.Clear();
-            List<Empleado> lst = new query().obtenerListaEmpleados();
-
-            foreach (Empleado emp in lst)
-            {
-                dgvEmpleados.Rows.Add(
-                                emp.id,
-                                emp.nom_usu,
-                                emp.contraseña,
-                                emp.curp,
-                                emp.nombre,
-                                emp.paterno,
-                                emp.materno,
-                                emp.fec_nacimiento,
-                                emp.direccion,
-                                emp.colonia,
-                                emp.municipio,
-                                emp.estado,
-                                emp.fec_ingreso,
-                                emp.puesto);
-            }
-
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -60,7 +34,7 @@ namespace PV_Autolavado
 
             if (res == DialogResult.OK)
             {
-                this.llenarTablaEmpleados();
+                this.empleadosTableAdapter.Fill(this.datos_Autolavado.empleados);
             }
         }
 
@@ -88,7 +62,7 @@ namespace PV_Autolavado
 
             if (res == DialogResult.OK)
             {
-                this.llenarTablaEmpleados();
+                 this.empleadosTableAdapter.Fill(this.datos_Autolavado.empleados);
             }
 
 
@@ -104,7 +78,7 @@ namespace PV_Autolavado
                 int id = int.Parse(this.dgvEmpleados.CurrentRow.Cells[0].Value.ToString());
 
                 new query().eliminarRegistro("empleados", "id", id);
-                this.llenarTablaEmpleados();
+                this.empleadosTableAdapter.Fill(this.datos_Autolavado.empleados);
             }
         }
 
@@ -177,14 +151,21 @@ namespace PV_Autolavado
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.cambiarCampos(true);
-            this.btnAceptar.Visible = true;
+            try
+            {
+                this.cambiarCampos(true);
+                this.btnAceptar.Visible = true;
 
-            this.lblID.Text = this.dgvServicios.CurrentRow.Cells[0].Value.ToString();
-            this.ltxtDescripcion.Text = this.dgvServicios.CurrentRow.Cells[1].Value.ToString();
-            this.ptxtCosto.Text = this.dgvServicios.CurrentRow.Cells[2].Value.ToString();
+                this.lblID.Text = this.dgvServicios.CurrentRow.Cells[0].Value.ToString();
+                this.ltxtDescripcion.Text = this.dgvServicios.CurrentRow.Cells[1].Value.ToString();
+                this.ptxtCosto.Text = this.dgvServicios.CurrentRow.Cells[2].Value.ToString();
 
-            editar = true;
+                editar = true;
+            }
+            catch (Exception ext)
+            {
+                MessageBox.Show("No a seleccionado ninguna fila");
+            }
         }
 
         private void MenuAdministrador_FormClosed(object sender, FormClosedEventArgs e)
@@ -195,8 +176,21 @@ namespace PV_Autolavado
 
         private void button1_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             promociones p = new promociones();
             p.Show();
+=======
+            VisorReportes vsr = new VisorReportes();
+
+            vsr.fecha = this.dtpReporte.Value.ToString("dd/MM/yyyy");
+            vsr.ShowDialog();
+            
+        }
+
+        private void btnReportePersonal_Click(object sender, EventArgs e)
+        {
+            new VisorPersonal().ShowDialog(); ;
+>>>>>>> e4d7e6bad727586973acdbb5ac7740e33f1c3e4e
         }
 	}
 }
