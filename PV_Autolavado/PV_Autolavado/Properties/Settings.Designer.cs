@@ -22,5 +22,16 @@ namespace PV_Autolavado.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=el_charco;password=12345Charco;persistsecurityinfo=True;" +
+            "database=punto_venta_autolavado")]
+        public string punto_venta_autolavadoConnectionString {
+            get {
+                return ((string)(this["punto_venta_autolavadoConnectionString"]));
+            }
+        }
     }
 }

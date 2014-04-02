@@ -36,6 +36,7 @@ namespace PV_Autolavado
 		/// </summary>
 		private void InitializeComponent()
 		{
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuAdministrador));
             this.Usuario = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
@@ -43,6 +44,8 @@ namespace PV_Autolavado
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.ltxtDescripcion = new PV_Autolavado.Objetos.LabelTextField();
+            this.ptxtCosto = new PV_Autolavado.PriceTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -54,33 +57,36 @@ namespace PV_Autolavado
             this.costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomusuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colonia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.municipio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ingreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.puesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.datos_Autolavado = new PV_Autolavado.Datos_Autolavado();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.ltxtBuscar = new PV_Autolavado.Objetos.LabelTextField();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.ltxtBuscar = new PV_Autolavado.Objetos.LabelTextField();
-            this.ltxtDescripcion = new PV_Autolavado.Objetos.LabelTextField();
-            this.ptxtCosto = new PV_Autolavado.PriceTextBox();
+            this.empleadosTableAdapter = new PV_Autolavado.Datos_AutolavadoTableAdapters.empleadosTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contraseñaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datos_Autolavado)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -158,6 +164,25 @@ namespace PV_Autolavado
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Visible = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // ltxtDescripcion
+            // 
+            this.ltxtDescripcion.Location = new System.Drawing.Point(6, 54);
+            this.ltxtDescripcion.Name = "ltxtDescripcion";
+            this.ltxtDescripcion.Size = new System.Drawing.Size(261, 26);
+            this.ltxtDescripcion.TabIndex = 6;
+            this.ltxtDescripcion.Text = "Descripcion";
+            this.ltxtDescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ltxtDescripcion.texto = "Descripcion";
+            // 
+            // ptxtCosto
+            // 
+            this.ptxtCosto.Cantidad = 0D;
+            this.ptxtCosto.Location = new System.Drawing.Point(6, 86);
+            this.ptxtCosto.Name = "ptxtCosto";
+            this.ptxtCosto.Size = new System.Drawing.Size(100, 26);
+            this.ptxtCosto.TabIndex = 7;
+            this.ptxtCosto.Text = "0.00";
             // 
             // label1
             // 
@@ -274,22 +299,24 @@ namespace PV_Autolavado
             this.dgvEmpleados.AllowUserToDeleteRows = false;
             this.dgvEmpleados.AllowUserToResizeColumns = false;
             this.dgvEmpleados.AllowUserToResizeRows = false;
+            this.dgvEmpleados.AutoGenerateColumns = false;
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.nomusuario,
-            this.contraseña,
-            this.curp,
-            this.nombre,
-            this.paterno,
-            this.materno,
-            this.nac,
-            this.direccion,
-            this.colonia,
-            this.municipio,
-            this.estado,
-            this.ingreso,
-            this.puesto});
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.contraseñaDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13});
+            this.dgvEmpleados.DataSource = this.empleadosBindingSource;
             this.dgvEmpleados.Location = new System.Drawing.Point(4, 7);
             this.dgvEmpleados.MultiSelect = false;
             this.dgvEmpleados.Name = "dgvEmpleados";
@@ -298,90 +325,15 @@ namespace PV_Autolavado
             this.dgvEmpleados.Size = new System.Drawing.Size(705, 353);
             this.dgvEmpleados.TabIndex = 6;
             // 
-            // id
+            // empleadosBindingSource
             // 
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
+            this.empleadosBindingSource.DataMember = "empleados";
+            this.empleadosBindingSource.DataSource = this.datos_Autolavado;
             // 
-            // nomusuario
+            // datos_Autolavado
             // 
-            this.nomusuario.HeaderText = "Usuario";
-            this.nomusuario.Name = "nomusuario";
-            this.nomusuario.ReadOnly = true;
-            // 
-            // contraseña
-            // 
-            this.contraseña.HeaderText = "Contraseña";
-            this.contraseña.Name = "contraseña";
-            this.contraseña.ReadOnly = true;
-            this.contraseña.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // curp
-            // 
-            this.curp.HeaderText = "CURP";
-            this.curp.Name = "curp";
-            this.curp.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // paterno
-            // 
-            this.paterno.HeaderText = "Paterno";
-            this.paterno.Name = "paterno";
-            this.paterno.ReadOnly = true;
-            // 
-            // materno
-            // 
-            this.materno.HeaderText = "Materno";
-            this.materno.Name = "materno";
-            this.materno.ReadOnly = true;
-            // 
-            // nac
-            // 
-            this.nac.HeaderText = "nac";
-            this.nac.Name = "nac";
-            this.nac.ReadOnly = true;
-            // 
-            // direccion
-            // 
-            this.direccion.HeaderText = "Direccion";
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
-            // 
-            // colonia
-            // 
-            this.colonia.HeaderText = "Colonia";
-            this.colonia.Name = "colonia";
-            this.colonia.ReadOnly = true;
-            // 
-            // municipio
-            // 
-            this.municipio.HeaderText = "Municipio";
-            this.municipio.Name = "municipio";
-            this.municipio.ReadOnly = true;
-            // 
-            // estado
-            // 
-            this.estado.HeaderText = "Estado";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            // 
-            // ingreso
-            // 
-            this.ingreso.HeaderText = "Ingreso";
-            this.ingreso.Name = "ingreso";
-            this.ingreso.ReadOnly = true;
-            // 
-            // puesto
-            // 
-            this.puesto.HeaderText = "Puesto";
-            this.puesto.Name = "puesto";
-            this.puesto.ReadOnly = true;
+            this.datos_Autolavado.DataSetName = "Datos_Autolavado";
+            this.datos_Autolavado.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnBuscar
             // 
@@ -391,6 +343,16 @@ namespace PV_Autolavado
             this.btnBuscar.Size = new System.Drawing.Size(26, 23);
             this.btnBuscar.TabIndex = 5;
             this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // ltxtBuscar
+            // 
+            this.ltxtBuscar.Location = new System.Drawing.Point(39, 378);
+            this.ltxtBuscar.Name = "ltxtBuscar";
+            this.ltxtBuscar.Size = new System.Drawing.Size(200, 20);
+            this.ltxtBuscar.TabIndex = 4;
+            this.ltxtBuscar.Text = "default";
+            this.ltxtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ltxtBuscar.texto = "Buscar";
             // 
             // btnEditar
             // 
@@ -444,34 +406,107 @@ namespace PV_Autolavado
             this.tabControl1.Size = new System.Drawing.Size(723, 431);
             this.tabControl1.TabIndex = 2;
             // 
-            // ltxtBuscar
+            // empleadosTableAdapter
             // 
-            this.ltxtBuscar.Location = new System.Drawing.Point(39, 378);
-            this.ltxtBuscar.Name = "ltxtBuscar";
-            this.ltxtBuscar.Size = new System.Drawing.Size(200, 20);
-            this.ltxtBuscar.TabIndex = 4;
-            this.ltxtBuscar.Text = "default";
-            this.ltxtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ltxtBuscar.texto = "Buscar";
+            this.empleadosTableAdapter.ClearBeforeFill = true;
             // 
-            // ltxtDescripcion
+            // dataGridViewTextBoxColumn1
             // 
-            this.ltxtDescripcion.Location = new System.Drawing.Point(6, 54);
-            this.ltxtDescripcion.Name = "ltxtDescripcion";
-            this.ltxtDescripcion.Size = new System.Drawing.Size(261, 26);
-            this.ltxtDescripcion.TabIndex = 6;
-            this.ltxtDescripcion.Text = "Descripcion";
-            this.ltxtDescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ltxtDescripcion.texto = "Descripcion";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // ptxtCosto
+            // dataGridViewTextBoxColumn2
             // 
-            this.ptxtCosto.Cantidad = 0D;
-            this.ptxtCosto.Location = new System.Drawing.Point(6, 86);
-            this.ptxtCosto.Name = "ptxtCosto";
-            this.ptxtCosto.Size = new System.Drawing.Size(100, 26);
-            this.ptxtCosto.TabIndex = 7;
-            this.ptxtCosto.Text = "0.00";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "nomusu";
+            this.dataGridViewTextBoxColumn2.HeaderText = "nomusu";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // contraseñaDataGridViewTextBoxColumn
+            // 
+            this.contraseñaDataGridViewTextBoxColumn.DataPropertyName = "contraseña";
+            this.contraseñaDataGridViewTextBoxColumn.HeaderText = "contraseña";
+            this.contraseñaDataGridViewTextBoxColumn.Name = "contraseñaDataGridViewTextBoxColumn";
+            this.contraseñaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "curp";
+            this.dataGridViewTextBoxColumn3.HeaderText = "curp";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "nombre";
+            this.dataGridViewTextBoxColumn4.HeaderText = "nombre";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "paterno";
+            this.dataGridViewTextBoxColumn5.HeaderText = "paterno";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "materno";
+            this.dataGridViewTextBoxColumn6.HeaderText = "materno";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "fec nacimiento";
+            this.dataGridViewTextBoxColumn7.HeaderText = "fec nacimiento";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "direccion";
+            this.dataGridViewTextBoxColumn8.HeaderText = "direccion";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "colonia";
+            this.dataGridViewTextBoxColumn9.HeaderText = "colonia";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "municipio";
+            this.dataGridViewTextBoxColumn10.HeaderText = "municipio";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "estado";
+            this.dataGridViewTextBoxColumn11.HeaderText = "estado";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "fec ingreso";
+            this.dataGridViewTextBoxColumn12.HeaderText = "fec ingreso";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "puesto";
+            this.dataGridViewTextBoxColumn13.HeaderText = "puesto";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
             // 
             // MenuAdministrador
             // 
@@ -495,6 +530,8 @@ namespace PV_Autolavado
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datos_Autolavado)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -531,20 +568,6 @@ namespace PV_Autolavado
         private System.Windows.Forms.DataGridViewTextBoxColumn costo;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dgvEmpleados;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomusuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contraseña;
-        private System.Windows.Forms.DataGridViewTextBoxColumn curp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paterno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn materno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nac;
-        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colonia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn municipio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ingreso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn puesto;
         private System.Windows.Forms.Button btnBuscar;
         private Objetos.LabelTextField ltxtBuscar;
         private System.Windows.Forms.Button btnEditar;
@@ -553,5 +576,22 @@ namespace PV_Autolavado
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAceptar;
+        private Datos_Autolavado datos_Autolavado;
+        private System.Windows.Forms.BindingSource empleadosBindingSource;
+        private Datos_AutolavadoTableAdapters.empleadosTableAdapter empleadosTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contraseñaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
 	}
 }

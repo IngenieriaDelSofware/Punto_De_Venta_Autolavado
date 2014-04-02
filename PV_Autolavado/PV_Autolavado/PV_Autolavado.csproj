@@ -79,6 +79,11 @@
     <Compile Include="Administrador\Personal.Designer.cs">
       <DependentUpon>Personal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Datos_Autolavado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Datos_Autolavado.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Origen Datos\mysql.cs" />
     <Compile Include="Origen Datos\query.cs" />
     <Compile Include="Entidates\Detalle_ticket.cs" />
@@ -178,6 +183,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Datos_Autolavado.xsc">
+      <DependentUpon>Datos_Autolavado.xsd</DependentUpon>
+    </None>
+    <None Include="Datos_Autolavado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Datos_Autolavado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datos_Autolavado.xss">
+      <DependentUpon>Datos_Autolavado.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

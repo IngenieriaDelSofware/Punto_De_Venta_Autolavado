@@ -20,7 +20,8 @@ namespace PV_Autolavado
 
         private void MenuAdministrador_Load(object sender, EventArgs e)
         {
-            this.llenarTablaEmpleados();
+            // TODO: esta línea de código carga datos en la tabla 'datos_Autolavado.empleados' Puede moverla o quitarla según sea necesario.
+            this.empleadosTableAdapter.Fill(this.datos_Autolavado.empleados);
             this.llenarTablaServicios();
             this.cambiarCampos(false);
         }
