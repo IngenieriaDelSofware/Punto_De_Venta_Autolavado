@@ -33,14 +33,14 @@
             this.preciopromo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.labelTextField1 = new PV_Autolavado.Objetos.LabelTextField();
-            this.labelTextField2 = new PV_Autolavado.Objetos.LabelTextField();
             this.label3 = new System.Windows.Forms.Label();
-            this.labelTextField3 = new PV_Autolavado.Objetos.LabelTextField();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.labelTextField4 = new PV_Autolavado.Objetos.LabelTextField();
+            this.precioesp = new PV_Autolavado.Objetos.LabelTextField();
+            this.precioserv = new PV_Autolavado.Objetos.LabelTextField();
+            this.labelTextField2 = new PV_Autolavado.Objetos.LabelTextField();
+            this.descrip = new PV_Autolavado.Objetos.LabelTextField();
             this.SuspendLayout();
             // 
             // button1
@@ -51,6 +51,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -86,27 +87,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // labelTextField1
-            // 
-            this.labelTextField1.AllowDrop = true;
-            this.labelTextField1.Location = new System.Drawing.Point(326, 195);
-            this.labelTextField1.Multiline = true;
-            this.labelTextField1.Name = "labelTextField1";
-            this.labelTextField1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelTextField1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.labelTextField1.Size = new System.Drawing.Size(377, 59);
-            this.labelTextField1.TabIndex = 6;
-            this.labelTextField1.texto = "default";
-            // 
-            // labelTextField2
-            // 
-            this.labelTextField2.Location = new System.Drawing.Point(194, 91);
-            this.labelTextField2.Name = "labelTextField2";
-            this.labelTextField2.Size = new System.Drawing.Size(100, 20);
-            this.labelTextField2.TabIndex = 7;
-            this.labelTextField2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.labelTextField2.texto = "default";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label3
             // 
@@ -116,15 +97,6 @@
             this.label3.Size = new System.Drawing.Size(125, 13);
             this.label3.TabIndex = 8;
             this.label3.Text = "Promociones por servicio";
-            // 
-            // labelTextField3
-            // 
-            this.labelTextField3.Location = new System.Drawing.Point(320, 91);
-            this.labelTextField3.Name = "labelTextField3";
-            this.labelTextField3.Size = new System.Drawing.Size(100, 20);
-            this.labelTextField3.TabIndex = 9;
-            this.labelTextField3.Text = "$";
-            this.labelTextField3.texto = "default";
             // 
             // label4
             // 
@@ -153,29 +125,67 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Promociones especiales";
             // 
-            // labelTextField4
+            // precioesp
             // 
-            this.labelTextField4.Location = new System.Drawing.Point(194, 137);
-            this.labelTextField4.Name = "labelTextField4";
-            this.labelTextField4.Size = new System.Drawing.Size(100, 20);
-            this.labelTextField4.TabIndex = 13;
-            this.labelTextField4.Text = "$";
-            this.labelTextField4.texto = "default";
-            this.labelTextField4.UseWaitCursor = true;
+            this.precioesp.Location = new System.Drawing.Point(194, 137);
+            this.precioesp.Name = "precioesp";
+            this.precioesp.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.precioesp.Size = new System.Drawing.Size(100, 20);
+            this.precioesp.TabIndex = 13;
+            this.precioesp.Text = "$";
+            this.precioesp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.precioesp.texto = "default";
+            this.precioesp.UseWaitCursor = true;
+            // 
+            // precioserv
+            // 
+            this.precioserv.Location = new System.Drawing.Point(320, 91);
+            this.precioserv.Name = "precioserv";
+            this.precioserv.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.precioserv.Size = new System.Drawing.Size(100, 20);
+            this.precioserv.TabIndex = 9;
+            this.precioserv.Text = "$";
+            this.precioserv.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.precioserv.texto = "default";
+            // 
+            // labelTextField2
+            // 
+            this.labelTextField2.Location = new System.Drawing.Point(194, 91);
+            this.labelTextField2.Name = "labelTextField2";
+            this.labelTextField2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.labelTextField2.Size = new System.Drawing.Size(100, 20);
+            this.labelTextField2.TabIndex = 7;
+            this.labelTextField2.Text = "Servicio";
+            this.labelTextField2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.labelTextField2.texto = "Servicio";
+            // 
+            // descrip
+            // 
+            this.descrip.AllowDrop = true;
+            this.descrip.Location = new System.Drawing.Point(326, 195);
+            this.descrip.Multiline = true;
+            this.descrip.Name = "descrip";
+            this.descrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.descrip.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.descrip.Size = new System.Drawing.Size(377, 59);
+            this.descrip.TabIndex = 6;
+            this.descrip.Text = "Descripcion";
+            this.descrip.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.descrip.texto = "Descripcion";
             // 
             // promociones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 321);
-            this.Controls.Add(this.labelTextField4);
+            this.Controls.Add(this.precioesp);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.labelTextField3);
+            this.Controls.Add(this.precioserv);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.labelTextField2);
-            this.Controls.Add(this.labelTextField1);
+            this.Controls.Add(this.descrip);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.preciopromo);
@@ -195,13 +205,13 @@
         private System.Windows.Forms.TextBox preciopromo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
-        private Objetos.LabelTextField labelTextField1;
+        private Objetos.LabelTextField descrip;
         private Objetos.LabelTextField labelTextField2;
         private System.Windows.Forms.Label label3;
-        private Objetos.LabelTextField labelTextField3;
+        private Objetos.LabelTextField precioserv;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private Objetos.LabelTextField labelTextField4;
+        private Objetos.LabelTextField precioesp;
     }
 }
