@@ -61,14 +61,14 @@ namespace PV_Autolavado
 			string usuario = null;
 			
 				this.conectarMySQL();
-				string cadena = ("SELECT nom usu FROM empleado WHERE contraseña = '" + pass +"'");
+				string cadena = ("SELECT 'nomusu' FROM empleados WHERE contraseña = '" + pass +"'");
 				
 				
 				comando = new MySqlCommand(cadena, conexion);
 				scanner = comando.ExecuteReader();
 				
 				while(scanner.Read()){
-					usuario = scanner["nom_usu"].ToString();
+					usuario = scanner["nomusu"].ToString();
 					
 				}
 				
@@ -89,6 +89,7 @@ namespace PV_Autolavado
         public void crearpromocion(promocion promo)
         {
             this.conectarMySQL();
+           
             string sql = ("INSERT INTO `punto_venta_autolavado`.`descuentos`" +
                 " (`lgeneral`,`descservicio`,`descespecial`,`descripcion`) " +
                 " VALUES (" +
@@ -96,6 +97,8 @@ namespace PV_Autolavado
                 promo.plg + "," +
                 promo.ps + "," +
                 promo.descrip + "," + "');");
+            this.desconectarMySQL();
+
         }
 		public void guardarTicket(Ticket nota){
 			

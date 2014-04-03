@@ -41,6 +41,10 @@ namespace PV_Autolavado
             this.Usuario = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -85,12 +89,8 @@ namespace PV_Autolavado
             this.ltxtBuscar = new PV_Autolavado.Objetos.LabelTextField();
             this.ltxtDescripcion = new PV_Autolavado.Objetos.LabelTextField();
             this.ptxtCosto = new PV_Autolavado.PriceTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.labelTextField1 = new PV_Autolavado.Objetos.LabelTextField();
-            this.button2 = new System.Windows.Forms.Button();
             this.labelTextField2 = new PV_Autolavado.Objetos.LabelTextField();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.labelTextField1 = new PV_Autolavado.Objetos.LabelTextField();
             this.tabPage3.SuspendLayout();
 =======
             this.listasReportes = new System.Windows.Forms.TabPage();
@@ -159,6 +159,42 @@ namespace PV_Autolavado
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Promociones";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(388, 143);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Aceptar";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(253, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(133, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Ver id de promocion actual";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(253, 57);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Ver";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(250, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Eliminar promocion";
             // 
             // button5
             // 
@@ -687,59 +723,27 @@ namespace PV_Autolavado
             // 
             this.servicioTableAdapter.ClearBeforeFill = true;
             // 
-            // label2
+            // labelTextField2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(250, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Eliminar promocion";
+            this.labelTextField2.Location = new System.Drawing.Point(363, 59);
+            this.labelTextField2.Name = "labelTextField2";
+            this.labelTextField2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.labelTextField2.Size = new System.Drawing.Size(100, 20);
+            this.labelTextField2.TabIndex = 7;
+            this.labelTextField2.Text = "-";
+            this.labelTextField2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.labelTextField2.texto = "-";
             // 
             // labelTextField1
             // 
             this.labelTextField1.Location = new System.Drawing.Point(363, 100);
             this.labelTextField1.Name = "labelTextField1";
+            this.labelTextField1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.labelTextField1.Size = new System.Drawing.Size(100, 20);
             this.labelTextField1.TabIndex = 5;
-            this.labelTextField1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.labelTextField1.texto = "default";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(253, 57);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Ver";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // labelTextField2
-            // 
-            this.labelTextField2.Location = new System.Drawing.Point(363, 59);
-            this.labelTextField2.Name = "labelTextField2";
-            this.labelTextField2.Size = new System.Drawing.Size(100, 20);
-            this.labelTextField2.TabIndex = 7;
-            this.labelTextField2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.labelTextField2.texto = "default";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(253, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Ver id de promocion actual";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(388, 143);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Aceptar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.labelTextField1.Text = "-";
+            this.labelTextField1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.labelTextField1.texto = "-";
             // 
             // MenuAdministrador
             // 

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PV_Autolavado.Entidates
 {
-    class promocion
+    public class promocion
     {
         public string plg;
         public string ps;
